@@ -18,9 +18,9 @@ Execute install.sh - This installs everything needed to run minikube on your mac
 
 `./install.sh`
 
-Execute start.sh - This will start a minikube instance that will require further setup, described as follows.
+Execute initialize.sh - This will start a minikube instance that will require further setup, described as follows.
 
-`./start.sh`
+`./initialize.sh`
 
 
 ##Modify xhyve vm.
