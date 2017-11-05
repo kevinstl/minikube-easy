@@ -30,7 +30,7 @@ Execute install.sh - This installs everything needed to run minikube on your mac
 
 Add insecure registry address to docker:
 
-<img src="docker-insecure-registry.png" width="200"/>
+<img src="docker-insecure-registry.png" width="400"/>
 
 SSH into vm for further customization
 
