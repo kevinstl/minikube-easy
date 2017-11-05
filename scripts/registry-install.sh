@@ -10,4 +10,5 @@ fi
 #Borrowed from https://mtpereira.com/local-development-k8s.html
 kubectl apply -f local-registry.yml
 
-#./stop.sh
+./stop.sh
+./start.sh

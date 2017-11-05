@@ -18,17 +18,19 @@ Execute install.sh - This installs everything needed to run minikube on your mac
 
 `./install.sh`
 
-Execute initialize.sh - This will start a minikube instance that will require further setup, described as follows.
 
-`./initialize.sh`
-
-
-##Modify xhyve vm.
-
-Execute setup-minikube-vm-1.sh - This creates a configuration directory on the vm.
+##Install Cockpit.
 
 `./cockpit-install.sh`
 
+
+##Install Docker Registry.
+
+`./registry-install.sh`
+
+Add insecure registry address to docker:
+
+<img src="docker-insecure-registry.png" width="200"/>
 
 SSH into vm for further customization
 
@@ -36,11 +38,4 @@ SSH into vm for further customization
 
 
 
-####While logged into minikube vm execute the following:
-
-sudo su -
-
-Setup users.
-
-`echo "changeme,kube,1" > /var/lib/localkube/config/static-users.csv`
 
