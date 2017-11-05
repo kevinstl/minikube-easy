@@ -15,4 +15,4 @@ minikube ssh -- 'sudo bash -c "echo \"changeme,kube,1\" > /var/lib/localkube/con
 kubectl create -f kubernetes-cockpit.json
 
 
-./stop.sh
+#./stop.sh
