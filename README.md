@@ -2,7 +2,7 @@
 Scripts to make installation of minikube and corresponding development pods easy.
 
 
-##Installing Minikube Instance
+## Installing Minikube Instance
 
 
 Clone the https://github.com/kevinstl/minikube-easy.git project. 
@@ -19,12 +19,12 @@ Execute install.sh - This installs everything needed to run minikube on your mac
 `./install.sh`
 
 
-##Install Cockpit.
+## Install Cockpit.
 
 `./cockpit-install.sh`
 
 
-##Install Docker Registry.
+## Install Docker Registry.
 
 `./registry-install.sh`
 
