@@ -11,7 +11,9 @@ fi
 minikube ssh -- sudo mkdir -p /var/lib/localkube/config
 minikube ssh -- 'sudo bash -c "echo \"changeme,kube,1\" > /var/lib/localkube/config/static-users.csv"'
 
-kubectl create -f kubernetes-cockpit.json
+cat kubernetes-cockpit.json-template | sed s/X_KUBERNETES_SERVICE_HOST_X/`minikube ip`/g > kubernetes-cockpit.json-fixed
+
+kubectl create -f kubernetes-cockpit.json-fixed
 
 ./stop.sh
-./start.sh
+./start-with-cockpit.sh

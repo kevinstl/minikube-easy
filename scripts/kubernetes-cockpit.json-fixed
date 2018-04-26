@@ -37,7 +37,7 @@
                 },
                 {
                   "name": "KUBERNETES_SERVICE_HOST",
-                  "value": "10.0.0.0"
+                  "value": "192.168.64.52"
                 },
                 {
                   "name": "KUBERNETES_SERVICE_PORT",
