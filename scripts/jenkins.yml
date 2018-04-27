@@ -10,7 +10,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/data/jenkins/"
+    path: "/host-home/minikube/data/jenkins/"
 
 ---
 kind: PersistentVolumeClaim
@@ -34,6 +34,7 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
+      nodePort: 30010
   selector:
     app: jenkins
     tier: jenkins
@@ -55,7 +56,7 @@ spec:
         tier: jenkins
     spec:
       containers:
-      - image: chadmoon/jenkins-docker-kubectl:latest
+      - image: jenkins/jenkins:lts
         name: jenkins
         securityContext:
           privileged: true
@@ -70,7 +71,7 @@ spec:
       volumes:
       - name: docker
         hostPath:
-          path: /var/run/docker.sock
+          path: /host-home/minikube/var/run/docker.sock
       - name: jenkins-persistent-storage
         persistentVolumeClaim:
           claimName: jenkins-claim
