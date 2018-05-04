@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo rm /usr/local/bin/kubectl
+rm /usr/local/bin/kubectl

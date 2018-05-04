@@ -1,16 +1,16 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: jenkins
+  name: jenkins-host-home
   labels:
     type: local
 spec:
   storageClassName: host-home
   capacity:
-    storage: 2Gi
+    storage: 8Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/host-home/minikube/jenkins/"
+    path: "/host-home/jenkins/"
 
 

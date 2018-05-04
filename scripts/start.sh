@@ -11,4 +11,7 @@
 minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g --insecure-registry localhost:5000
 #minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g --insecure-registry localhost:5000
 
-nohup minikube mount ~:/host-home &
+mkdir /minikube
+chown 777 /minikube
+
+nohup minikube mount /minikube:/host-home &

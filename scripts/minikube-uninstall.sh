@@ -1,8 +1,8 @@
 #!/bin/bash
 
 minikube delete
-sudo rm /usr/local/bin/minikube
-sudo rm -rf ~/.minikube
+rm /usr/local/bin/minikube
+rm -rf ~/.minikube
 
 #brew cask uninstall minikube
 
