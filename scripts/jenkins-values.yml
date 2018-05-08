@@ -1,0 +1,9 @@
+Persistence:
+  Enabled: true
+  volumes:
+    - name: jekins-host-home
+      hostPath:
+        path: /host-home
+  mounts:
+    - name: jekins-host-home
+      mountPath: /host-home
