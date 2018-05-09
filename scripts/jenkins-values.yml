@@ -7,3 +7,10 @@ Persistence:
   mounts:
     - name: jekins-host-home
       mountPath: /host-home
+
+Agent:
+  Enabled: true
+  volumes:
+     - type: HostPath
+       hostPath: /host-home
+       mountPath: /host-home
