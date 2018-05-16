@@ -15,4 +15,6 @@ minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12
 #chown 777 /minikube
 #nohup minikube mount /minikube:/host-home &
 
+sudo ./hosts-edit.sh "minikube" `minikube ip` /etc/hosts
+
 nohup minikube mount ~:/host-home &

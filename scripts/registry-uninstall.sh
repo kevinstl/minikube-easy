@@ -8,6 +8,7 @@ then
 fi
 
 #Borrowed from https://mtpereira.com/local-development-k8s.html
-kubectl delete -f local-registry.yml
+#kubectl delete -f local-registry.yml
+helm del --purge easy-registry
 
 #./stop.sh

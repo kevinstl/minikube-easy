@@ -17,8 +17,11 @@ helm init
 
 
 helm install --name jenkins --set Master.ServiceType=NodePort --set Master.NodePort=30010 --set Master.UseSecurity=false \
+                --set rbac.install=true \
                 --set Master.InstallPlugins[0]=kubernetes:1.6.0 --set Master.InstallPlugins[1]=workflow-aggregator:2.5 \
-                --set Master.InstallPlugins[2]=workflow-job:2.20 --set Master.InstallPlugins[3]=credentials-binding:1.16 \
+                --set Master.InstallPlugins[2]=workflow-job:2.21 --set Master.InstallPlugins[3]=credentials-binding:1.16 \
+                --set Master.InstallPlugins[4]=git:3.9.0 \
+                --set Agent.ImageTag=3.19-1-alpine --set Agent.Memory=2048Mi \
                 -f jenkins-values.yml \
                 stable/jenkins
 
