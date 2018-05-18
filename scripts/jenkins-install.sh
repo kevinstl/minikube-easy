@@ -1,11 +1,6 @@
 #!/bin/bash
 
-status=`minikube status | grep minikube: | awk '{print $2}'`
-echo minikube is $status
-if [ "$status" != "Running" ]
-then
-    ./initialize.sh
-fi
+./initialize.sh
 
 ./helm-tiller-initialize.sh
 
@@ -16,7 +11,7 @@ fi
 #kubectl apply -f jenkins-persistent-volume.yml;
 #kubectl apply -f jenkins-persistent-volume-claim.yml;
 
-helm init
+#helm init
 
 
 helm install --name jenkins --set Master.ServiceType=NodePort --set Master.NodePort=30010 --set Master.UseSecurity=false \

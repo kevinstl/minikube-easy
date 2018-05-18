@@ -4,7 +4,7 @@
 echo begin helm tiller initialize!!!!!
 
 
-tillerStatus=`kubectl --namespace kube-system get pods | grep tiller`
+tillerStatus=`kubectl --namespace kube-system get pods | grep tiller | grep "1/1"`
 echo $tillerStatus
 if [ "$tillerStatus" == "" ]
 then

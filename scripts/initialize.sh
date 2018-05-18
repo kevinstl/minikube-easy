@@ -1,13 +1,25 @@
 #!/bin/bash
 
+startWithCockpit=$1
 
-echo begin!!!!!
-
-
-./start.sh
+echo begin initialize minikube!!!!!
 
 
-echo end!!!!!
+status=`minikube status | grep minikube: | awk '{print $2}'`
+echo minikube is $status
+if [ "$status" != "Running" ]
+then
+    echo "starting minikube"
+    ./start.sh $startWithCockpit
+    sleep 1
+    ./initialize.sh $startWithCockpit
+
+else
+    echo "no need to start minikube"
+fi
+
+
+echo end initialize minikube!!!!!
 
 
 
