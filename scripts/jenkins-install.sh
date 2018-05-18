@@ -7,6 +7,9 @@ then
     ./initialize.sh
 fi
 
+./helm-tiller-initialize.sh
+
+
 #Borrowed from https://github.com/kenzanlabs/kubernetes-ci-cd
 #kubectl apply -f jenkins.yml;
 
