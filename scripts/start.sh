@@ -17,11 +17,23 @@ startWithCockpit=$1
 if [ "$startWithCockpit" == "cockpit" ]
 then
     echo "Starting with cockpit."
-    minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g --extra-config=apiserver.Authentication.PasswordFile.BasicAuthFile=/var/lib/localkube/config/static-users.csv
+#    minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g --extra-config=apiserver.Authentication.PasswordFile.BasicAuthFile=/var/lib/localkube/config/static-users.csv
+#    minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g \
+#    --extra-config=apiserver.Authentication.PasswordFile.BasicAuthFile=/var/lib/localkube/config/static-users.csv \
+#    --extra-config=apiserver.Admission.PluginNames="PodPreset"
+    minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g \
+    --extra-config=apiserver.Authentication.PasswordFile.BasicAuthFile=/var/lib/localkube/config/static-users.csv \
+    --extra-config=apiserver.Admission.PluginNames="PersistentVolumeLabel,DefaultStorageClass,PodPreset"
 else
     echo "Starting without cockpit."
     minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g
+#    minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g \
+#    --extra-config=apiserver.Admission.PluginNames="NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,ResourceQuota,DefaultTolerationSeconds,GenericAdmissionWebhook,PodPreset"
+#    minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g \
+#    --extra-config=apiserver.Admission.PluginNames="PersistentVolumeLabel,DefaultStorageClass,PodPreset"
 fi
+
+#    --extra-config=apiserver.admission-control="PodPreset"
 
 #mkdir /minikube
 #chown 777 /minikube
