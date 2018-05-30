@@ -13,7 +13,7 @@
 
 #helm init
 
-kubectl --namespace continuous-integration create -f ./templates/jenkins-pod-preset.yml
+./jenkins-install-pod-preset.sh
 
 helm install --name jenkins --namespace continuous-integration \
                 --set Master.ServiceType=NodePort --set Master.NodePort=30010 --set Master.UseSecurity=false \
