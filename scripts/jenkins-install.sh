@@ -13,6 +13,8 @@
 
 #helm init
 
+kubectl create namespace continuous-integration
+
 ./jenkins-install-pod-preset.sh
 
 helm install --name jenkins --namespace continuous-integration \
