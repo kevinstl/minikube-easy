@@ -1,21 +1,14 @@
 #!/bin/bash
 
+nexusPassword=$1
+
 ./initialize.sh
 
 ./helm-tiller-initialize.sh
 
-
-#Borrowed from https://github.com/kenzanlabs/kubernetes-ci-cd
-#kubectl apply -f jenkins.yml;
-
-#kubectl apply -f jenkins-persistent-volume.yml;
-#kubectl apply -f jenkins-persistent-volume-claim.yml;
-
-#helm init
-
 kubectl create namespace continuous-integration
 
-./jenkins-install-pod-preset.sh
+./jenkins-pod-preset-install.sh $nexusPassword
 
 helm install --name jenkins --namespace continuous-integration \
                 --set Master.ServiceType=NodePort --set Master.NodePort=30010 --set Master.UseSecurity=false \

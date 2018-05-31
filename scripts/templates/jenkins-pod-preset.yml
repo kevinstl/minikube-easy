@@ -4,17 +4,20 @@ metadata:
   name: jenkins-pod-preset
 spec:
   selector:
-#    matchLabels:
-#      component: jenkins-jenkins-master
-#      component: jenkins-jenkins-slave
     matchExpressions:
       - {key: component, operator: In, values: [jenkins-jenkins-master, jenkins-jenkins-slave]}
   env:
     - name: DB_PORT
-      value: "6379"
-  volumeMounts:
-    - mountPath: /cache
-      name: cache-volume
-  volumes:
-    - name: cache-volume
-      emptyDir: {}
+#      value: "6379"
+      value: "$(DB_PORT)"
+    - name: NEXUS_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: jenkins-pod-preset-secrets
+          key: nexus-password
+#  volumeMounts:
+#    - mountPath: /cache
+#      name: cache-volume
+#  volumes:
+#    - name: cache-volume
+#      emptyDir: {}
