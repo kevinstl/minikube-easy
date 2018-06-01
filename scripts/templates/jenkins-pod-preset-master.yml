@@ -1,0 +1,23 @@
+apiVersion: settings.k8s.io/v1alpha1
+kind: PodPreset
+metadata:
+  name: jenkins-pod-preset-master
+spec:
+  selector:
+    matchExpressions:
+      - {key: component, operator: In, values: [jenkins-jenkins-master]}
+  env:
+    - name: DB_PORT
+#      value: "6379"
+      value: "$(DB_PORT)"
+    - name: NEXUS_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: jenkins-pod-preset-secrets
+          key: nexus-password
+#  volumeMounts:
+#    - mountPath: /cache
+#      name: cache-volume
+#  volumes:
+#    - name: cache-volume
+#      emptyDir: {}

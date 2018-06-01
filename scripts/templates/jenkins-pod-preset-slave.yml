@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchExpressions:
-      - {key: component, operator: In, values: [jenkins-jenkins-master, jenkins-jenkins-slave]}
+      - {key: jenkins, operator: In, values: [slave]}
   env:
     - name: DB_PORT
 #      value: "6379"
