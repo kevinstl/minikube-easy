@@ -7,6 +7,7 @@
 
 #kubectl --namespace continuous-integration delete -f ./templates/jenkins-pod-preset.yml
 ./jenkins-pod-preset-uninstall.sh
+./jenkins-credentials-secrets-uninstall.sh
 
 helm del --purge jenkins
 
