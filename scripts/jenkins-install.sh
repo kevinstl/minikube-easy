@@ -3,6 +3,8 @@
 nexusPassword=$1
 credentialsXml=$2
 
+
+
 ./initialize.sh
 
 ./helm-tiller-initialize.sh
@@ -10,7 +12,11 @@ credentialsXml=$2
 kubectl create namespace continuous-integration
 
 ./jenkins-pod-preset-install.sh $nexusPassword
-./jenkins-credentials-secrets-install.sh $credentialsXml
+
+if [ "credentialsXml" != "" ]
+then
+    ./jenkins-credentials-secrets-install.sh $credentialsXml
+fi
 
 helm install --name jenkins --namespace continuous-integration \
                 --set Master.ServiceType=NodePort --set Master.NodePort=30010 --set Master.UseSecurity=false \

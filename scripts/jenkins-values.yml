@@ -154,7 +154,7 @@ Master:
     - ws-cleanup:0.32
 
   # Kubernetes secret that contains a 'credentials.xml' for Jenkins
-#  CredentialsXmlSecret: jenkins-credentials
+  CredentialsXmlSecret: jenkins-credentials
 
 Persistence:
   Enabled: true
