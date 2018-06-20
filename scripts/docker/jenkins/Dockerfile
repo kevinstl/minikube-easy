@@ -7,6 +7,14 @@ RUN apt-get update && \
     apt-get install -y ruby jq && \
     apt-get clean
 
+#RUN ls
+
+#COPY files/init.groovy /usr/share/jenkins/ref/init.groovy
+#COPY files/plugins.txt /usr/share/jenkins/plugin-java.txt
+COPY files/plugins.txt /usr/share/jenkins/plugins.txt
+#COPY files/wait-until-docker-running.sh /var/jenkins_home
+#RUN chmod 755 /var/jenkins_home/wait-until-docker-running.sh
+
 #Docker installation possibility from: https://getintodevops.com/blog/the-simple-way-to-run-docker-in-docker-for-ci
 ## Install the latest Docker CE binaries
 #RUN apt-get update && \
@@ -34,4 +42,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y install apt-tran
     echo "jenkins ALL=NOPASSWD: /usr/local/bin/docker-compose" >> /etc/sudoers && \
     echo 'Defaults  env_keep += "HOME"' >> /etc/sudoers
 
-USER jenkins # drop back to the regular jenkins user - good practice
+#RUN /var/jenkins_home/wait-until-docker-running.sh
+
+#RUN install-plugins.sh $( paste -sd' ' /usr/share/jenkins/plugin-java.txt )
+RUN install-plugins.sh $( paste -sd' ' /usr/share/jenkins/plugins.txt )
+
+# drop back to the regular jenkins user - good practice
+USER jenkins
+

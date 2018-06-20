@@ -3,9 +3,12 @@
 nexusPassword=$1
 credentialsXml=$2
 
-
-
 ./initialize.sh
+
+
+./jenkins-uninstall.sh
+./jenkins-install-initialize.sh
+
 
 ./helm-tiller-initialize.sh
 
@@ -17,6 +20,8 @@ if [ "credentialsXml" != "" ]
 then
     ./jenkins-credentials-secrets-install.sh $credentialsXml
 fi
+
+
 
 helm install --name jenkins --namespace continuous-integration \
                 --set Master.ServiceType=NodePort --set Master.NodePort=30010 --set Master.UseSecurity=false \

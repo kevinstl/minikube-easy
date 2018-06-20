@@ -1,0 +1,37 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "artifactory-service-supplement",
+    "namespace": "artifacts",
+    "labels": {
+      "app": "artifactory",
+      "chart": "artifactory-7.0.3",
+      "component": "artifactory",
+      "heritage": "Tiller",
+      "release": "artifactory"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "name": "artifactory",
+        "protocol": "TCP",
+        "port": 8081,
+        "targetPort": 8081,
+        "nodePort": 30011
+      }
+    ],
+    "selector": {
+      "app": "artifactory",
+      "component": "artifactory",
+      "release": "artifactory"
+    },
+    "type": "NodePort",
+    "sessionAffinity": "None",
+    "externalTrafficPolicy": "Cluster"
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}
