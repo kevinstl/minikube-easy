@@ -9,7 +9,7 @@ RUN apt-get update && \
 
 #RUN ls
 
-#COPY files/init.groovy /usr/share/jenkins/ref/init.groovy
+COPY files/init.groovy /usr/share/jenkins/ref/init.groovy
 #COPY files/plugins.txt /usr/share/jenkins/plugin-java.txt
 COPY files/plugins.txt /usr/share/jenkins/plugins.txt
 #COPY files/wait-until-docker-running.sh /var/jenkins_home
