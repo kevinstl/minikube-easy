@@ -28,7 +28,7 @@ helm install --name jenkins --namespace continuous-integration \
                 --set rbac.install=true \
                 --set Agent.Image=cloudbees/jnlp-slave-with-java-build-tools --set Agent.ImageTag=2.2.0 --set Agent.Memory=2048Mi \
                 -f jenkins-values.yml \
-                stable/jenkins
+                ../charts/jenkins
 
 
 

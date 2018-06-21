@@ -8,10 +8,10 @@ Master:
   InstallPlugins:
     - kubernetes:1.8.2
     - kubernetes-credentials:0.3.1
-    - workflow-aggregator:2.5
-    - workflow-job:2.21
-    - credentials-binding:1.16
-    - git:3.9.1
+#    - workflow-aggregator:2.5
+#    - workflow-job:2.21
+#    - credentials-binding:1.16
+#    - git:3.9.1
 ##    - maven-plugin:2.7.1
 ##    - gradle:1.28
 #    - ace-editor:1.1
