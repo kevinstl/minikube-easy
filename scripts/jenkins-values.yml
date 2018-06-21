@@ -158,7 +158,9 @@ Master:
 #    - workflow-step-api:2.11
 #    - workflow-support:2.13
 #    - ws-cleanup:0.32
-
+  CSRF:
+      DefaultCrumbIssuer:
+        Enabled: false
   # Kubernetes secret that contains a 'credentials.xml' for Jenkins
   CredentialsXmlSecret: jenkins-credentials
 
