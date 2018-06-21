@@ -37,7 +37,7 @@ config-file-provider:2.15.6
 configurationslicing:1.47
 copyartifact:1.38.1
 credentials:2.1.13
-credentials-binding:1.10
+credentials-binding:1.16
 dashboard-view:2.9.10
 delivery-pipeline-plugin:0.10.3
 discard-old-build:1.05
@@ -52,7 +52,7 @@ external-monitor-job:1.7
 extra-columns:1.18
 ez-templates:1.2.5
 favorite:2.0.4
-git:3.1.0
+git:3.9.1
 git-client:2.3.0
 github:1.26.1
 github-api:1.85
@@ -77,7 +77,6 @@ jquery:1.11.2-0
 jquery-detached:1.2.1
 junit:1.20
 ldap:1.14
-kubernetes:1.8.2
 mailer:1.19
 mapdb-api:1.0.9.0
 mask-passwords:2.9
@@ -132,14 +131,14 @@ variant:1.1
 versionnumber:1.8.1
 windows-slaves:1.2
 workflow-aggregator:2.5
-workflow-api:2.12
+workflow-api:2.28
 workflow-basic-steps:2.4
 workflow-cps:2.29
 workflow-cps-global-lib:2.7
 workflow-durable-task-step:2.9
-workflow-job:2.10
-workflow-multibranch:2.13
+workflow-job:2.21
+workflow-multibranch:2.19
 workflow-scm-step:2.4
-workflow-step-api:2.11
-workflow-support:2.13
+workflow-step-api:2.15
+workflow-support:2.18
 ws-cleanup:0.32
