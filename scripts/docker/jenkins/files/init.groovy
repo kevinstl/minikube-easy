@@ -3,7 +3,7 @@
 //import com.cloudbees.plugins.credentials.SystemCredentialsProvider
 //import com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl
 import hudson.model.JDK
-//import hudson.plugins.groovy.Groovy
+import hudson.plugins.groovy.Groovy
 //import javaposse.jobdsl.dsl.DslScriptLoader
 //import javaposse.jobdsl.plugin.JenkinsJobManagement
 import jenkins.model.Jenkins
@@ -169,10 +169,10 @@ import java.nio.file.Files
 println "Adding jdk"
 Jenkins.getInstance().getJDKs().add(new JDK("jdk8", "/usr/lib/jvm/java-8-openjdk-amd64"))
 
-//println "Marking allow macro token"
-//Groovy.DescriptorImpl descriptor =
-//	(Groovy.DescriptorImpl) Jenkins.getInstance().getDescriptorOrDie(Groovy)
-//descriptor.configure(null, net.sf.json.JSONObject.fromObject('''{"allowMacro":"true"}'''))
+println "Marking allow macro token"
+Groovy.DescriptorImpl descriptor =
+	(Groovy.DescriptorImpl) Jenkins.getInstance().getDescriptorOrDie(Groovy)
+descriptor.configure(null, net.sf.json.JSONObject.fromObject('''{"allowMacro":"true"}'''))
 
 //println "Creating the seed job"
 //new DslScriptLoader(jobManagement).with {
