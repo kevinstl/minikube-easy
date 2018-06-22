@@ -163,6 +163,10 @@ Master:
         Enabled: false
   # Kubernetes secret that contains a 'credentials.xml' for Jenkins
   CredentialsXmlSecret: jenkins-credentials
+  JavaOpts: >-
+    -Djenkins.install.runSetupWizard=false
+    -Djava.awt.headless=true
+    -Dhudson.model.ParametersAction.keepUndefinedParameters=true
 
 Persistence:
   Enabled: true
