@@ -87,9 +87,9 @@ Use the install-config-jenkins-pipeline-k8s-seed.sh script to create your spring
  `./install-config-jenkins-pipeline-k8s-seed.sh project-name`
  
  
- ### [Reusing the Docker daemon](https://github.com/kubernetes/minikube/blob/master/docs/reusing_the_docker_daemon.md)
+ ### Reusing the Docker daemon
  
- You may reuse the minikube docker daemon from your workstation shell. The benefit to doing this is that you can execute a docker build and the image you build is immediately available to your minikube instance rather than having to deploy to and pull from a docker registry.
+ You may [reuse the minikube docker daemon](https://github.com/kubernetes/minikube/blob/master/docs/reusing_the_docker_daemon.md) from your workstation shell. The benefit to doing this is that you can execute a docker build and the image you build is immediately available to your minikube instance rather than having to deploy to and pull from a docker registry.
  
  Additionally minikube is resource intensive so you can reduce load on your workstation by not having to run a separate daemon instance to run docker commands.
  
