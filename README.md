@@ -28,7 +28,7 @@ Change to minikube-easy/scripts directory.
 
 ### Install everything required for local development and deployments to minikube.
 
-The local-development-install.sh script installs minikube, hyperkit, kubectl, jenkins, cockpit and artifactory.
+The local-development-install.sh script installs minikube, hyperkit, kubectl, jenkins, cockpit and artifactory. If you choose to install everything using this script there is no need to execute the  installation scripts described below this installation. However you have the option to install individual tools if you prefer as described below this installation.
 
 `./local-development-install.sh`
 
@@ -39,6 +39,19 @@ The install.sh script will strictly install what is required to run only minikub
 Execute install.sh - This installs everything needed to run minikube on your machine. It installs kubectl, hyperkit and minikube.
 
 `./install.sh`
+
+
+### Starting Minikube
+
+Start minikube with the start.sh script.
+
+`./start.sh`
+
+### Stopping Minikube
+
+Stop minikube with the stop.sh script.
+
+`./stop.sh`
 
 
 ### Install Cockpit.
