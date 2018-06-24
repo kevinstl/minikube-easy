@@ -1,8 +1,8 @@
 # Minikube Easy
 
-[Minikube](https://github.com/kubernetes/minikube) is a collection of bash scripts and templates that make installation of minikube and corresponding development pods easy. 
+[Minikube](https://github.com/kubernetes/minikube) is a collection of bash scripts and templates that simplify the installation of minikube and local development infrastructure. 
 
-Minikube is a great initiative for running [kubernetes](https://github.com/kubernetes/kubernetes) locally presumably for developing locally. While kubernetes and minikube are under constant development this project aims to ensure a stable development environment using minikube.
+Minikube is a great initiative for running [kubernetes](https://github.com/kubernetes/kubernetes) on your local workstation presumably for developing locally. While kubernetes and minikube are under constant development this project aims to ensure a stable development environment using minikube.
 
 ### Key Features
 
