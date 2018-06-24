@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<servers>
+		<server>
+			<id>${M2_SETTINGS_REPO_ID}</id>
+			<username>${M2_SETTINGS_REPO_USERNAME}</username>
+			<password>${M2_SETTINGS_REPO_PASSWORD}</password>
+		</server>
+		<server>
+			<id>${DOCKER_SERVER_ID}</id>
+			<username>${DOCKER_USERNAME}</username>
+			<password>${DOCKER_PASSWORD}</password>
+			<configuration>
+				<email>${DOCKER_EMAIL}</email>
+			</configuration>
+		</server>
+	</servers>
+</settings>
