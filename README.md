@@ -1,16 +1,16 @@
 # Minikube Easy
 
-[Minikube](https://github.com/kubernetes/minikube) is a collection of bash scripts and templates that simplify the installation of minikube and local development infrastructure. 
+Minikube Easy is a collection of bash scripts and templates that simplify the installation of minikube and local development infrastructure. 
 
-Minikube is a great initiative for running [kubernetes](https://github.com/kubernetes/kubernetes) on your local workstation presumably for developing locally. While kubernetes and minikube are under constant development this project aims to ensure a stable development environment using minikube.
+[Minikube](https://github.com/kubernetes/minikube) is a great initiative for running [kubernetes](https://github.com/kubernetes/kubernetes) on your local workstation presumably for developing locally. While kubernetes and minikube are under constant development this project aims to ensure a stable development environment using minikube.
 
 ### Key Features
 
-* Installation of minikube, [hyperkit](https://github.com/moby/hyperkit), [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) and development tools via one-line shell commands.
+* Installation of minikube, [hyperkit](https://github.com/moby/hyperkit), [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) and development tools via one-liner shell commands.
 * Jenkins installation pre-configured with plugins required for builds and deployments using [Spring Cloud Pipelines](https://cloud.spring.io/spring-cloud-pipelines/).
 * [Cockpit](https://cockpit-project.org/) installation to simplify interaction with kubernetes.
 * Simple installation of [Artifactory](https://jfrog.com/artifactory/) to support most artifact repository requirements.
-* One-line installation of all development tools required for local development and deployment into minikube.
+* One-liner installation of all development tools required for local development and deployment into minikube.
 
 The scripts provided are confirmed to work on **macOS** High Sierra Version 10.13.5.
 
@@ -28,7 +28,7 @@ Change to minikube-easy/scripts directory.
 
 ### Install everything required for local development and deployments to minikube.
 
-The local-development-install.sh script installs minikube, hyperkit, kubectl, jenkins, cockpit and artifactory. If you choose to install everything using this script there is no need to execute the  installation scripts described below this installation. However you have the option to install individual tools if you prefer as described below this installation.
+The local-development-install.sh script installs minikube, hyperkit, kubectl, jenkins, cockpit and artifactory. If you choose to install everything using this script there is no need to execute the  installation scripts described below this instruction. However you have the option to install individual tools if you prefer as described below this instruction.
 
 `./local-development-install.sh`
 
@@ -78,6 +78,24 @@ Add insecure registry address to docker:
 SSH into vm for further customization
 
 `minikube ssh`
+
+
+### Setting up your own spring cloud pipeline.
+
+Use the install-config-jenkins-pipeline-k8s-seed.sh script to create your spring cloud pipelines jenkins jobs seed. Replace project-name with your project name.
+
+ `./install-config-jenkins-pipeline-k8s-seed.sh project-name`
+ 
+ 
+ ### [Reusing the Docker daemon](https://github.com/kubernetes/minikube/blob/master/docs/reusing_the_docker_daemon.md)
+ 
+ You may reuse the minikube docker daemon from your workstation shell. The benefit to doing this is that you can execute a docker build and the image you build is immediately available to your minikube instance rather than having to deploy to and pull from a docker registry.
+ 
+ Additionally minikube is resource intensive so you can reduce load on your workstation by not having to run a separate daemon instance to run docker commands.
+ 
+Execute minidocker-install.sh to make the minidocker available from any shell location.
+
+`./install-minidocker.sh`
 
 
 

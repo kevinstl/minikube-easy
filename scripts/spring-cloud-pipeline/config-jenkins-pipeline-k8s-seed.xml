@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+	<actions/>
+	<description/>
+	<keepDependencies>false</keepDependencies>
+	<properties>
+		<com.coravy.hudson.plugins.github.GithubProjectProperty>
+			<projectUrl>https://github.com/spring-cloud/spring-cloud-pipelines/</projectUrl>
+		</com.coravy.hudson.plugins.github.GithubProjectProperty>
+		<hudson.model.ParametersDefinitionProperty>
+			<parameterDefinitions>
+				<hudson.model.StringParameterDefinition>
+					<name>REPOS</name>
+					<defaultValue>https://github.com/kevinstl/minikube-easy</defaultValue>
+					<description>Provide a comma separated list of repos. If you want the project name to be different then repo name, first provide the name and separate the url with $ sign</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>GIT_CREDENTIAL_ID</name>
+					<defaultValue>git</defaultValue>
+					<description>ID of the credentials used to push tags to git repo</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>GIT_SSH_CREDENTIAL_ID</name>
+					<defaultValue>gitSsh</defaultValue>
+					<description>ID of the ssh credentials used to push tags to git repo</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.BooleanParameterDefinition>
+					<name>GIT_USE_SSH_KEY</name>
+					<defaultValue>false</defaultValue>
+					<description>Should ssh key be used for git</description>
+				</hudson.model.BooleanParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>JDK_VERSION</name>
+					<defaultValue>jdk8</defaultValue>
+					<description>ID of Git installation</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>M2_SETTINGS_REPO_ID</name>
+					<defaultValue>artifactory-local</defaultValue>
+					<description>Name of the server ID in Maven's settings.xml</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>REPO_WITH_BINARIES_FOR_UPLOAD</name>
+					<defaultValue>http://X_KUBERNETES_SERVICE_HOST_X:30011/artifactory/libs-release-local</defaultValue>
+					<description>Address to hosted JARs</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>REPO_WITH_BINARIES_CREDENTIAL_ID</name>
+					<defaultValue>repo-with-binaries</defaultValue>
+					<description>Credential ID of repo with binaries</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>GIT_EMAIL</name>
+					<defaultValue>email@example.com</defaultValue>
+					<description>Email used to tag the repo</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>GIT_NAME</name>
+					<defaultValue>Pivo Tal</defaultValue>
+					<description>Name used to tag the repo</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>TOOLS_REPOSITORY</name>
+					<defaultValue>https://github.com/kevinstl/spring-cloud-pipelines</defaultValue>
+					<description>The URL containing pipeline functions repository</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>TOOLS_BRANCH</name>
+					<defaultValue>master</defaultValue>
+					<description>The branch with pipeline functions</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.BooleanParameterDefinition>
+					<name>AUTO_DEPLOY_TO_STAGE</name>
+					<defaultValue>false</defaultValue>
+					<description>Should deployment to stage be automatic</description>
+				</hudson.model.BooleanParameterDefinition>
+				<hudson.model.BooleanParameterDefinition>
+					<name>AUTO_DEPLOY_TO_PROD</name>
+					<defaultValue>false</defaultValue>
+					<description>Should deployment to prod be automatic</description>
+				</hudson.model.BooleanParameterDefinition>
+				<hudson.model.BooleanParameterDefinition>
+					<name>API_COMPATIBILITY_STEP_REQUIRED</name>
+					<defaultValue>true</defaultValue>
+					<description>Should api compatibility step be present</description>
+				</hudson.model.BooleanParameterDefinition>
+				<hudson.model.BooleanParameterDefinition>
+					<name>DB_ROLLBACK_STEP_REQUIRED</name>
+					<defaultValue>true</defaultValue>
+					<description>Should DB rollback step be present</description>
+				</hudson.model.BooleanParameterDefinition>
+				<hudson.model.BooleanParameterDefinition>
+					<name>DEPLOY_TO_STAGE_STEP_REQUIRED</name>
+					<defaultValue>true</defaultValue>
+					<description>Should deploy to stage step be present</description>
+				</hudson.model.BooleanParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_TYPE</name>
+					<defaultValue>k8s</defaultValue>
+					<description>Which PAAS do you want to choose</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.BooleanParameterDefinition>
+					<name>KUBERNETES_MINIKUBE</name>
+					<defaultValue>true</defaultValue>
+					<description>Will you connect to Minikube?</description>
+				</hudson.model.BooleanParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>MYSQL_ROOT_CREDENTIAL_ID</name>
+					<defaultValue>mysql-root</defaultValue>
+					<description>Credential ID of MYSQL root user</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>MYSQL_CREDENTIAL_ID</name>
+					<defaultValue>mysql</defaultValue>
+					<description>Credential ID of MYSQL user</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>DOCKER_REGISTRY_CREDENTIAL_ID</name>
+					<defaultValue>docker-registry</defaultValue>
+					<description>Credential ID of docker registry</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>DOCKER_SERVER_ID</name>
+					<defaultValue>docker-repo</defaultValue>
+					<description>Docker Server ID</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>DOCKER_EMAIL</name>
+					<defaultValue>kjwilde@gmail.com</defaultValue>
+					<description>Email used to connect to Docker registry</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>DOCKER_REGISTRY_ORGANIZATION</name>
+					<defaultValue>kevinstl</defaultValue>
+					<description>URL to Kubernetes cluster for test env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>DOCKER_REGISTRY_URL</name>
+					<defaultValue>https://index.docker.io/v1/</defaultValue>
+					<description>URL to the docker registry</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PIPELINE_DESCRIPTOR</name>
+					<defaultValue/>
+					<description>The name of the pipeline descriptor. If none is set then `sc-pipelines.yml` will be assumed</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_TEST_API_URL</name>
+					<defaultValue>X_KUBERNETES_SERVICE_HOST_X:8443</defaultValue>
+					<description>URL to Kubernetes cluster for test env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_STAGE_API_URL</name>
+					<defaultValue>X_KUBERNETES_SERVICE_HOST_X:8443</defaultValue>
+					<description>URL to Kubernetes cluster for stage env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_PROD_API_URL</name>
+					<defaultValue>X_KUBERNETES_SERVICE_HOST_X:8443</defaultValue>
+					<description>URL to Kubernetes cluster for prod env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_TEST_CA_PATH</name>
+					<defaultValue>/host-home/.minikube/ca.crt</defaultValue>
+					<description>Certificate Authority location for test env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_STAGE_CA_PATH</name>
+					<defaultValue>/usr/share/jenkins/cert/ca.crt</defaultValue>
+					<description>Certificate Authority location for stage env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_PROD_CA_PATH</name>
+					<defaultValue>/usr/share/jenkins/cert/ca.crt</defaultValue>
+					<description>Certificate Authority location for prod env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_TEST_CLIENT_CERT_PATH</name>
+					<defaultValue>/host-home/.minikube/apiserver.crt</defaultValue>
+					<description>Client Certificate location for test env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_STAGE_CLIENT_CERT_PATH</name>
+					<defaultValue>/usr/share/jenkins/cert/apiserver.crt</defaultValue>
+					<description>Client Certificate location for stage env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_PROD_CLIENT_CERT_PATH</name>
+					<defaultValue>/usr/share/jenkins/cert/apiserver.crt</defaultValue>
+					<description>Client Certificate location for prod env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_TEST_CLIENT_KEY_PATH</name>
+					<defaultValue>/host-home/.minikube/apiserver.key</defaultValue>
+					<description>Client Key location for test env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_STAGE_CLIENT_KEY_PATH</name>
+					<defaultValue>/usr/share/jenkins/cert/apiserver.key</defaultValue>
+					<description>Client Key location for stage env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_PROD_CLIENT_KEY_PATH</name>
+					<defaultValue>/usr/share/jenkins/cert/apiserver.key</defaultValue>
+					<description>Client Key location for prod env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_TEST_CLIENT_TOKEN_PATH</name>
+					<defaultValue/>
+					<description>Path to the file containing the token for test env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_STAGE_CLIENT_TOKEN_PATH</name>
+					<defaultValue/>
+					<description>Path to the file containing the token for stage env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_PROD_CLIENT_TOKEN_PATH</name>
+					<defaultValue/>
+					<description>Path to the file containing the token for prod env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_TEST_CLIENT_TOKEN_ID</name>
+					<defaultValue/>
+					<description>ID of the credentials containing a token used by Kubectl for test env. Takes precedence over client key</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_STAGE_CLIENT_TOKEN_ID</name>
+					<defaultValue/>
+					<description>ID of the credentials containing a token used by Kubectl for stage env. Takes precedence over client key</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_PROD_CLIENT_TOKEN_ID</name>
+					<defaultValue/>
+					<description>ID of the credentials containing a token used by Kubectl for prod env. Takes precedence over client key</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_TEST_CLUSTER_NAME</name>
+					<defaultValue>minikube</defaultValue>
+					<description>Name of the cluster for test env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_STAGE_CLUSTER_NAME</name>
+					<defaultValue>minikube</defaultValue>
+					<description>Name of the cluster for stage env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_PROD_CLUSTER_NAME</name>
+					<defaultValue>minikube</defaultValue>
+					<description>Name of the cluster for prod env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_TEST_CLUSTER_USERNAME</name>
+					<defaultValue>minikube</defaultValue>
+					<description>Username for the cluster for test env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_STAGE_CLUSTER_USERNAME</name>
+					<defaultValue>minikube</defaultValue>
+					<description>Username for the cluster for stage env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_PROD_CLUSTER_USERNAME</name>
+					<defaultValue>minikube</defaultValue>
+					<description>Username for the cluster for prod env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_TEST_SYSTEM_NAME</name>
+					<defaultValue>minikube</defaultValue>
+					<description>Name for the system for test env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_STAGE_SYSTEM_NAME</name>
+					<defaultValue>minikube</defaultValue>
+					<description>Name for the system for stage env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_PROD_SYSTEM_NAME</name>
+					<defaultValue>minikube</defaultValue>
+					<description>Name for the system for prod env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_TEST_NAMESPACE</name>
+					<defaultValue>sc-pipelines-test</defaultValue>
+					<description>Namespace for the test env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_STAGE_NAMESPACE</name>
+					<defaultValue>sc-pipelines-stage</defaultValue>
+					<description>Namespace for the stage env</description>
+				</hudson.model.StringParameterDefinition>
+				<hudson.model.StringParameterDefinition>
+					<name>PAAS_PROD_NAMESPACE</name>
+					<defaultValue>sc-pipelines-prod</defaultValue>
+					<description>Namespace for the prod env</description>
+				</hudson.model.StringParameterDefinition>
+			</parameterDefinitions>
+		</hudson.model.ParametersDefinitionProperty>
+	</properties>
+	<canRoam>true</canRoam>
+	<disabled>false</disabled>
+	<blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+	<blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+	<triggers/>
+	<concurrentBuild>false</concurrentBuild>
+	<builders>
+		<hudson.plugins.gradle.Gradle>
+			<description/>
+			<switches/>
+			<tasks>clean build</tasks>
+			<rootBuildScriptDir/>
+			<buildFile/>
+			<gradleName>(Default)</gradleName>
+			<useWrapper>true</useWrapper>
+			<makeExecutable>false</makeExecutable>
+			<fromRootBuildScriptDir>true</fromRootBuildScriptDir>
+			<useWorkspaceAsHome>false</useWorkspaceAsHome>
+			<passAsProperties>false</passAsProperties>
+		</hudson.plugins.gradle.Gradle>
+		<javaposse.jobdsl.plugin.ExecuteDslScripts>
+			<targets>jenkins/jobs/jenkins_pipeline_sample*.groovy</targets>
+			<usingScriptText>false</usingScriptText>
+			<scriptText/>
+			<ignoreExisting>false</ignoreExisting>
+			<removedJobAction>DISABLE</removedJobAction>
+			<removedViewAction>DELETE</removedViewAction>
+			<lookupStrategy>SEED_JOB</lookupStrategy>
+			<additionalClasspath>jenkins/src/main/groovy
+				jenkins/src/main/resources</additionalClasspath>
+		</javaposse.jobdsl.plugin.ExecuteDslScripts>
+	</builders>
+	<publishers/>
+	<buildWrappers/>
+	<scm class="hudson.plugins.git.GitSCM">
+		<userRemoteConfigs>
+			<hudson.plugins.git.UserRemoteConfig>
+				<url>https://github.com/spring-cloud/spring-cloud-pipelines.git</url>
+			</hudson.plugins.git.UserRemoteConfig>
+		</userRemoteConfigs>
+		<branches>
+			<hudson.plugins.git.BranchSpec>
+				<name>${TOOLS_BRANCH}</name>
+			</hudson.plugins.git.BranchSpec>
+		</branches>
+		<configVersion>2</configVersion>
+		<doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+		<gitTool>Default</gitTool>
+		<extensions>
+			<hudson.plugins.git.extensions.impl.SubmoduleOption>
+				<disableSubmodules>false</disableSubmodules>
+				<recursiveSubmodules>true</recursiveSubmodules>
+				<trackingSubmodules>false</trackingSubmodules>
+				<reference/>
+				<parentCredentials>false</parentCredentials>
+			</hudson.plugins.git.extensions.impl.SubmoduleOption>
+		</extensions>
+		<browser class="hudson.plugins.git.browser.GithubWeb">
+			<url>https://github.com/spring-cloud/spring-cloud-pipelines/</url>
+		</browser>
+	</scm>
+</project>

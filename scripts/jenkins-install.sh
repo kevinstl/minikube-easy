@@ -16,7 +16,7 @@ kubectl create namespace continuous-integration
 
 ./jenkins-pod-preset-install.sh $nexusPassword
 
-if [ "credentialsXml" != "" ]
+if [ "$credentialsXml" != "" ]
 then
     ./jenkins-credentials-secrets-install.sh $credentialsXml
 fi
