@@ -26,6 +26,8 @@ Change to minikube-easy/scripts directory.
 
 `cd minikube-easy/scripts`
 
+All install scripts have a corresponding uninstall script.
+
 ### Install everything required for local development and deployments to minikube.
 
 The local-development-install.sh script installs minikube, hyperkit, kubectl, jenkins, cockpit and artifactory. If you choose to install everything using this script there is no need to execute the  installation scripts described below this instruction. However you have the option to install individual tools if you prefer as described below this instruction.
@@ -95,7 +97,7 @@ Use the install-config-jenkins-pipeline-k8s-seed.sh script to create your spring
  
 Execute minidocker-install.sh to make the minidocker available from any shell location.
 
-`./install-minidocker.sh`
+`./minidocker-install.sh`
 
 
 
