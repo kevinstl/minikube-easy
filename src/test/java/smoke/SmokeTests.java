@@ -33,6 +33,9 @@ public class SmokeTests {
 
 	@Test
 	public void shouldWork() {
+
+		System.out.println("applicationUrl: " + applicationUrl);
+
 		ResponseEntity<String> entity = this.testRestTemplate
 				.getForEntity("http://" + this.applicationUrl + "/", String.class);
 
