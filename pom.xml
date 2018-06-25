@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>minikube-easy</name>
+	<name>github-webhook</name>
 	<description>Minikube Easy Source</description>
 
 	<parent>
