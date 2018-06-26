@@ -145,7 +145,7 @@
 				</hudson.model.StringParameterDefinition>
 				<hudson.model.StringParameterDefinition>
 					<name>PAAS_TEST_API_URL</name>
-					<defaultValue>X_KUBERNETES_SERVICE_HOST_X:8443</defaultValue>
+					<defaultValue>https://github.com</defaultValue>
 					<description>URL to Kubernetes cluster for test env</description>
 				</hudson.model.StringParameterDefinition>
 				<hudson.model.StringParameterDefinition>

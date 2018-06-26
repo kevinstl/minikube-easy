@@ -2,3 +2,5 @@
 *.iml
 .zip
 nohup.out
+
+*fixed.xml
