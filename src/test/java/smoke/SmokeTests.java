@@ -22,16 +22,14 @@ import static org.assertj.core.api.BDDAssertions.then;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SmokeTests.class,
-		webEnvironment = SpringBootTest.WebEnvironment.NONE)
+		webEnvironment = SpringBootTest.WebEnvironment.NONE
+)
 @EnableAutoConfiguration
-@PropertySources({
-	@PropertySource("classpath:properties/test.properties")
-})
 public class SmokeTests {
 
 	private static final Log log = LogFactory.getLog(MethodHandles.lookup().lookupClass());
 
-	@Value("${stubrunner.url}") String stubRunnerUrl;
+//	@Value("${stubrunner.url}") String stubRunnerUrl;
 //	@Value("${application.url}") String applicationUrl;
 	@Value("${readme.url}") String readmeUrl;
 
@@ -43,7 +41,7 @@ public class SmokeTests {
 		System.out.println("applicationUrl: " + readmeUrl);
 
 		ResponseEntity<String> entity = this.testRestTemplate
-				.getForEntity("http://" + this.readmeUrl + "/", String.class);
+				.getForEntity("https://" + this.readmeUrl, String.class);
 
 		then(entity.getStatusCode().is2xxSuccessful()).isTrue();
 	}
