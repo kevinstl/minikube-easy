@@ -1,0 +1,31 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: markserv-deployment
+spec:
+  selector:
+    matchLabels:
+      app: markserv
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      # unlike pod-markserv.yaml, the name is not included in the meta data as a unique name is
+      # generated from the deployment name
+      labels:
+        app: markserv
+    spec:
+      containers:
+      - name: markserv
+        image: thomsch98/markserv
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /data/minikube-easy
+          name: minikube-easy
+      volumes:
+      - name: minikube-easy
+        hostPath:
+          # directory location on host
+          path: /host-home/Developer/projects/minikube-easy
+          # this field is optional
+          type: DirectoryOrCreate

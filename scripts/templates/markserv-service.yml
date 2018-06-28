@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: markserv-service
+spec:
+  selector:
+    app: markserv
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3080
+    nodePort: 30013
