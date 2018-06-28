@@ -41,7 +41,7 @@ public class SmokeTests {
 		System.out.println("applicationUrl: " + readmeUrl);
 
 		ResponseEntity<String> entity = this.testRestTemplate
-				.getForEntity("https://" + this.readmeUrl, String.class);
+				.getForEntity("http://" + this.readmeUrl, String.class);
 
 		then(entity.getStatusCode().is2xxSuccessful()).isTrue();
 	}
