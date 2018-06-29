@@ -145,7 +145,7 @@
 				</hudson.model.StringParameterDefinition>
 				<hudson.model.StringParameterDefinition>
 					<name>PAAS_TEST_API_URL</name>
-					<defaultValue>https://github.com</defaultValue>
+					<defaultValue>X_KUBERNETES_SERVICE_HOST_X:8443</defaultValue>
 					<description>URL to Kubernetes cluster for test env</description>
 				</hudson.model.StringParameterDefinition>
 				<hudson.model.StringParameterDefinition>
@@ -274,7 +274,7 @@
 					<description>Name for the system for stage env</description>
 				</hudson.model.StringParameterDefinition>
 				<hudson.model.StringParameterDefinition>
-					<name>PAAS_PROD_SYSTEM_NAME</name>
+					<name>PAAS_PROD_SYSTfEM_NAME</name>
 					<defaultValue>minikube</defaultValue>
 					<description>Name for the system for prod env</description>
 				</hudson.model.StringParameterDefinition>
