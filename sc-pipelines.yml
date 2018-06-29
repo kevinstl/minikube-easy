@@ -6,18 +6,18 @@
 test:
   # list of required services
   services:
-#    - type: rabbitmq
-#      name: rabbitmq-github-webhook
-#    - type: mysql
-#      name: mysql-github-webhook
-#      database: example
-#    - type: eureka
-#      name: eureka-github-webhook
-#      coordinates: scpipelines/github-eureka:latest
-#    - type: stubrunner
-#      name: stubrunner-github-webhook
-#      coordinates: scpipelines/github-analytics-stub-runner-boot-classpath-stubs:latest
-#      useClasspath: true
+    - type: rabbitmq
+      name: rabbitmq-github-webhook
+    - type: mysql
+      name: mysql-github-webhook
+      database: example
+    - type: eureka
+      name: eureka-github-webhook
+      coordinates: scpipelines/github-eureka:latest
+    - type: stubrunner
+      name: stubrunner-github-webhook
+      coordinates: scpipelines/github-analytics-stub-runner-boot-classpath-stubs:latest
+      useClasspath: true
 #stage:
 #  services:
 #    - type: rabbitmq

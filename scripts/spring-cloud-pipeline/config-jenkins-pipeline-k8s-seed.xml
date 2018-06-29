@@ -60,7 +60,7 @@
 				</hudson.model.StringParameterDefinition>
 				<hudson.model.StringParameterDefinition>
 					<name>TOOLS_REPOSITORY</name>
-					<defaultValue>https://github.com/kevinstl/spring-cloud-pipelines</defaultValue>
+					<defaultValue>https://github.com/kevinstl/spring-cloud-pipelines-v1.0.0.M8</defaultValue>
 					<description>The URL containing pipeline functions repository</description>
 				</hudson.model.StringParameterDefinition>
 				<hudson.model.StringParameterDefinition>
