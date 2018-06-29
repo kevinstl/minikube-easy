@@ -280,7 +280,7 @@
 				</hudson.model.StringParameterDefinition>
 				<hudson.model.StringParameterDefinition>
 					<name>PAAS_TEST_NAMESPACE</name>
-					<defaultValue>sc-pipelines-test</defaultValue>
+					<defaultValue>minikube-easy</defaultValue>
 					<description>Namespace for the test env</description>
 				</hudson.model.StringParameterDefinition>
 				<hudson.model.StringParameterDefinition>
