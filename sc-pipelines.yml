@@ -5,7 +5,7 @@
 # lowercase name of the environment
 test:
   # list of required services
-  services:
+#  services:
 #    - type: rabbitmq
 #      name: rabbitmq-github-webhook
 #    - type: mysql
@@ -19,12 +19,12 @@ test:
 #      coordinates: scpipelines/github-analytics-stub-runner-boot-classpath-stubs:latest
 #      useClasspath: true
 stage:
-  services:
-    - type: rabbitmq
-      name: github-rabbitmq
-    - type: mysql
-      name: mysql-github-webhook
-      database: example
-    - type: eureka
-      name: github-eureka
-      coordinates: scpipelines/github-eureka:latest
+#  services:
+#    - type: rabbitmq
+#      name: github-rabbitmq
+#    - type: mysql
+#      name: mysql-github-webhook
+#      database: example
+#    - type: eureka
+#      name: github-eureka
+#      coordinates: scpipelines/github-eureka:latest
