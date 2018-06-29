@@ -14,10 +14,10 @@ test:
 #    - type: eureka
 #      name: eureka-github-webhook
 #      coordinates: scpipelines/github-eureka:latest
-    - type: stubrunner
-      name: stubrunner-github-webhook
-      coordinates: scpipelines/github-analytics-stub-runner-boot-classpath-stubs:latest
-      useClasspath: true
+#    - type: stubrunner
+#      name: stubrunner-github-webhook
+#      coordinates: scpipelines/github-analytics-stub-runner-boot-classpath-stubs:latest
+#      useClasspath: true
 #stage:
 #  services:
 #    - type: rabbitmq
