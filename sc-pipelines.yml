@@ -3,8 +3,8 @@
 # on the STAGE environment to pass
 
 # lowercase name of the environment
-test:
-  # list of required services
+#test:
+#  # list of required services
 #  services:
 #    - type: rabbitmq
 #      name: rabbitmq-github-webhook
@@ -18,7 +18,7 @@ test:
 #      name: stubrunner-github-webhook
 #      coordinates: scpipelines/github-analytics-stub-runner-boot-classpath-stubs:latest
 #      useClasspath: true
-stage:
+#stage:
 #  services:
 #    - type: rabbitmq
 #      name: github-rabbitmq
