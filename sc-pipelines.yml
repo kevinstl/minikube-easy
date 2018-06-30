@@ -3,7 +3,7 @@
 # on the STAGE environment to pass
 
 # lowercase name of the environment
-#test:
+test:
 #  # list of required services
 #  services:
 #    - type: rabbitmq
