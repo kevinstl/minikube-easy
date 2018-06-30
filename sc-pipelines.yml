@@ -5,7 +5,7 @@
 # lowercase name of the environment
 test:
 #  # list of required services
-#  services:
+  services:
 #    - type: rabbitmq
 #      name: rabbitmq-github-webhook
 #    - type: mysql
