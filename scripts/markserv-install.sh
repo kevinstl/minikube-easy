@@ -10,7 +10,8 @@ then
     ./initialize.sh
 fi
 
-./markserv-uninstall.sh
+
+./markserv-uninstall.sh $initMinikubeInstruction
 
 ./markserv-install-initialize.sh
 
