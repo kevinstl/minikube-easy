@@ -1,6 +1,13 @@
 #!/bin/bash
 
-./initialize.sh
+$initMinikubeInstruction = $1
+
+echo "initMinikubeInstruction: $initMinikubeInstruction"
+
+if [ "$initMinikubeInstruction" != "skipInitMinikube" ]
+then
+    ./initialize.sh
+fi
 
 ./markserv-uninstall.sh
 

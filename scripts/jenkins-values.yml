@@ -167,6 +167,7 @@ Master:
     -Djenkins.install.runSetupWizard=false
     -Djava.awt.headless=true
     -Dhudson.model.ParametersAction.keepUndefinedParameters=true
+  resources: "{requests: {cpu: 50m, memory: 256Mi}, limits: {cpu: 2000m, memory: 1024Mi}}"
 
 Persistence:
   Enabled: true
