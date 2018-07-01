@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$initMinikubeInstruction = $1
+$initMinikubeInstruction=$1
 
 echo "initMinikubeInstruction: $initMinikubeInstruction"
 
