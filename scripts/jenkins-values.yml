@@ -167,7 +167,20 @@ Master:
     -Djenkins.install.runSetupWizard=false
     -Djava.awt.headless=true
     -Dhudson.model.ParametersAction.keepUndefinedParameters=true
-  resources: "{requests: {cpu: 50m, memory: 256Mi}, limits: {cpu: 2000m, memory: 1024Mi}}"
+    -XX:+UnlockExperimentalVMOptions
+    -XX:+UseCGroupMemoryLimitForHeap
+    -XX:+UseParallelGC
+    -XX:MinHeapFreeRatio=5
+    -XX:MaxHeapFreeRatio=10
+    -XX:GCTimeRatio=4
+    -XX:AdaptiveSizePolicyWeight=90
+  resources:
+      requests:
+        cpu: "25m"
+        memory: "64Mi"
+      limits:
+        cpu: "1000m"
+        memory: "256Mi"
 
 Persistence:
   Enabled: true

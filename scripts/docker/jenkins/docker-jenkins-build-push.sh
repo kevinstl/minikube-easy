@@ -2,5 +2,7 @@
 
 #docker login
 
-docker build -t kevinstl/jenkins-minikube-easy:latest .
+eval $(minikube docker-env)
+
+./docker-jenkins-build.sh
 docker push kevinstl/jenkins-minikube-easy:latest

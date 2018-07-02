@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:alpine
+FROM jenkins/jenkins:slim
 
 COPY files/init.groovy /usr/share/jenkins/ref/init.groovy
 #COPY files/plugins.txt /usr/share/jenkins/plugin-java.txt
@@ -18,7 +18,9 @@ ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false \
               -Dhudson.model.ParametersAction.keepUndefinedParameters=true
 
 RUN apt-get update && \
-    apt-get install -y ruby jq && \
+    apt-get install -y ruby && \
+    apt-get install -y jq && \
+    apt-get install -y wget && \
     apt-get clean
 
 # Install cf-cli
