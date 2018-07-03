@@ -204,4 +204,7 @@ Agent:
      - type: HostPath
        hostPath: /host-home
        mountPath: /host-home
+     - type: HostPath
+       hostPath: /var/run
+       mountPath: /var/run
 
