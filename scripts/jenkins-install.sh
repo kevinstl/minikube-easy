@@ -25,13 +25,13 @@ fi
 
 helm install --name jenkins --namespace continuous-integration \
                 --set Master.ServiceType=NodePort --set Master.NodePort=30010 --set Master.UseSecurity=false \
-                --set rbac.install=true \
-                --set Agent.Image=cloudbees/jnlp-slave-with-java-build-tools --set Agent.ImageTag=2.2.0 --set Agent.Memory=2048Mi \
                 -f jenkins-values.yml \
                 ../charts/jenkins
 
 
 
+#                --set rbac.install=true \
+#                --set Agent.Image=cloudbees/jnlp-slave-with-java-build-tools --set Agent.ImageTag=2.2.0 --set Agent.Memory=2048Mi \
 #                --set Master.InstallPlugins[0]=kubernetes:1.6.0 \
 #                --set Master.InstallPlugins[1]=workflow-aggregator:2.5 \
 #                --set Master.InstallPlugins[2]=workflow-job:2.21 \

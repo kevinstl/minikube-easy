@@ -5,6 +5,7 @@ Master:
 #  ImagePullPolicy: "Always"
   Image: "kevinstl/jenkins-minikube-easy"
   ImageTag: "latest"
+  UseSecurity: false
   InstallPlugins:
     - kubernetes:1.8.2
     - kubernetes-credentials:0.3.1
@@ -176,11 +177,15 @@ Master:
     -XX:AdaptiveSizePolicyWeight=90
   resources:
       requests:
-        cpu: "25m"
-        memory: "64Mi"
+        cpu: "15m"
+        memory: "32Mi"
       limits:
-        cpu: "1000m"
-        memory: "256Mi"
+        cpu: "500m"
+        memory: "128Mi"
+  ServiceType: NodePort
+  NodePort: 30010
+
+
 
 Persistence:
   Enabled: true
@@ -200,6 +205,8 @@ Persistence:
 
 Agent:
   Enabled: true
+  Image: "cloudbees/jnlp-slave-with-java-build-tools"
+  ImageTag: "2.2.0"
   volumes:
      - type: HostPath
        hostPath: /host-home
@@ -207,4 +214,7 @@ Agent:
      - type: HostPath
        hostPath: /var/run
        mountPath: /var/run
+
+rbac:
+  install: true
 
