@@ -1,8 +1,8 @@
 FROM jenkins/jenkins:slim
 
-COPY files/init.groovy /usr/share/jenkins/ref/init.groovy
+COPY files /usr/share/jenkins/ref/init.groovy
 #COPY files/plugins.txt /usr/share/jenkins/plugin-java.txt
-COPY files/plugins.txt /usr/share/jenkins/plugins.txt
+COPY files /usr/share/jenkins/plugins.txt
 #COPY files/wait-until-docker-running.sh /var/jenkins_home
 #RUN chmod 755 /var/jenkins_home/wait-until-docker-running.sh
 

@@ -205,8 +205,8 @@ Persistence:
 
 Agent:
   Enabled: true
-  Image: "cloudbees/jnlp-slave-with-java-build-tools"
-  ImageTag: "2.2.0"
+  Image: "kevinstl/jenkins-agent-minikube-easy"
+  ImageTag: "latest"
   volumes:
      - type: HostPath
        hostPath: /host-home
@@ -214,6 +214,23 @@ Agent:
      - type: HostPath
        hostPath: /var/run
        mountPath: /var/run
+  Memory: 2048Mi
+
+#  resources:
+#    requests:
+#      cpu: "200m"
+#      memory: "256Mi"
+#    limits:
+#      cpu: "200m"
+#      memory: "256Mi"
+
+#  resources:
+#    requests:
+#      cpu: "15m"
+#      memory: "32Mi"
+#    limits:
+#      cpu: "500m"
+#      memory: "128Mi"
 
 rbac:
   install: true
