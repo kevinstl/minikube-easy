@@ -4,4 +4,4 @@
 
 eval $(minikube docker-env)
 
-docker build -t kevinstl/jenkins-minikube-easy:latest .
+docker build -t kevinstl/jenkins-minikube-easy:0.1.0 .

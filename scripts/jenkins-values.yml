@@ -1,7 +1,7 @@
 Master:
   Name: jenkins-master
   Image: "kevinstl/jenkins-minikube-easy"
-  ImageTag: "latest"
+  ImageTag: "0.1.0"
   ImagePullPolicy: "Always"
   UseSecurity: false
   InstallPlugins:
@@ -55,7 +55,7 @@ Persistence:
 Agent:
   Enabled: true
   Image: "kevinstl/jenkins-agent-minikube-easy"
-  ImageTag: "latest"
+  ImageTag: "0.1.0"
   volumes:
      - type: HostPath
        hostPath: /host-home
