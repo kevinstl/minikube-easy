@@ -34,6 +34,17 @@ The local-development-install.sh script installs minikube, hyperkit, kubectl, je
 
 `./local-development-install.sh`
 
+### Setting up your own spring cloud pipeline.
+
+If you have installed everything required for local development you can test it out using spring cloud pipelines. 
+
+Use the install-config-jenkins-pipeline-k8s-seed.sh script to create your spring cloud pipelines jenkins jobs seed. Replace project-name with your project name.
+
+`cd spring-cloud-pipeline`
+
+ `./install-config-jenkins-pipeline-k8s-seed.sh project-name`
+ 
+
 ### Installing Minikube Instance Alone
 
 The install.sh script will strictly install what is required to run only minikube.
@@ -71,22 +82,13 @@ Once installed you will need to use the start-with-cockpit.sh script to start mi
 
 ### Install Docker Registry.
 
+The registry-install.sh installs a docker registry. It is most likely not necessary to run a docker registry locally as minikube is able to pick up docker images that you build locally if you are building your docker images using the docker daemon within minikube by executing the `eval $(minikube docker-env)` command.
+
 `./registry-install.sh`
 
 Add insecure registry address to docker:
 
 <img src="docker-insecure-registry.png" width="400"/>
-
-SSH into vm for further customization
-
-`minikube ssh`
-
-
-### Setting up your own spring cloud pipeline.
-
-Use the install-config-jenkins-pipeline-k8s-seed.sh script to create your spring cloud pipelines jenkins jobs seed. Replace project-name with your project name.
-
- `./install-config-jenkins-pipeline-k8s-seed.sh project-name`
  
  
  ### Reusing the Docker daemon
