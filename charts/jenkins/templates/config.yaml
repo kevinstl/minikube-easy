@@ -34,7 +34,7 @@ data:
               <inheritFrom></inheritFrom>
               <name>default</name>
               <instanceCap>2147483647</instanceCap>
-              <idleMinutes>0</idleMinutes>
+              <idleMinutes>1</idleMinutes>
               <label>{{ .Release.Name }}-{{ .Values.Agent.Component }}</label>
               <nodeSelector>
                 {{- $local := dict "first" true }}

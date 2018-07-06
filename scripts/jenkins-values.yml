@@ -64,7 +64,7 @@ Agent:
        hostPath: /var/run
        mountPath: /var/run
   Cpu: 2000m
-  Memory: 2048Mi
+  Memory: 3072Mi
   JavaOpts: >-
     -Djenkins.install.runSetupWizard=false
     -Djava.awt.headless=true
