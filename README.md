@@ -2,19 +2,34 @@
 
 Minikube Easy is a collection of bash scripts and templates that simplify the installation of minikube and local development infrastructure. 
 
-[Minikube](https://github.com/kubernetes/minikube) is a great initiative for running [kubernetes](https://github.com/kubernetes/kubernetes) on your local workstation presumably for developing locally. While kubernetes and minikube are under constant development this project aims to ensure a stable development environment using minikube.
+[Minikube](https://github.com/kubernetes/minikube) is a great initiative for running [kubernetes](https://kubernetes.io/docs/home) on your local workstation for developing locally. While kubernetes and minikube are under constant development this project aims to ensure a stable development environment using minikube.
+
+
+[<img src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" width="100px">](https://kubernetes.io/docs/home) 
+[<img src="https://raw.githubusercontent.com/kubernetes/minikube/master/logo/logo.png" width="100px">](https://github.com/kubernetes/minikube) 
+[<img src="https://wiki.jenkins.io/download/attachments/2916393/logo.png" width="100px">](https://jenkins.io) 
+[<img src="images/cockpit.png" width="100px">](https://cockpit-project.org) 
+[<img src="images/icon-spring-cloud.svg" width="100px">](https://cloud.spring.io/spring-cloud-pipelines) 
+[<img src="images/moby.png" width="100px">](https://www.docker.com) 
+[<img src="images/artifactory.png" width="100px">](https://jfrog.com/artifactory) 
+[<img src="https://raw.githubusercontent.com/kubernetes/helm/master/docs/logos/helm_logo_transparent.png" width="100px">](https://docs.helm.sh) 
+
+Minikube Easy combines excellent technologies for you so that you can start developing as quickly as possible so that you don't have to spend your time researching how to wire things together, it has been done for you.
+
+[<img src="https://jenkins.io/images/logos/jenkins-x/jenkins-x-256.png" width="100px">Jenkins X Coming Soon...](https://jenkins-x.io) 
+
 
 ### Key Features
 
-* Installation of minikube, [hyperkit](https://github.com/moby/hyperkit), [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) and development tools via one-liner shell commands.
-* Jenkins installation pre-configured with plugins required for builds and deployments using [Spring Cloud Pipelines](https://cloud.spring.io/spring-cloud-pipelines/).
-* [Cockpit](https://cockpit-project.org/) installation to simplify interaction with kubernetes.
-* Simple installation of [Artifactory](https://jfrog.com/artifactory/) to support most artifact repository requirements.
+* Installation of minikube, [hyperkit](https://github.com/moby/hyperkit), [kubectl](https://kubernetes.io/docs/reference/kubectl/overview) and development tools via one-liner shell commands.
+* Jenkins installation pre-configured with plugins required for builds and deployments using [Spring Cloud Pipelines](https://cloud.spring.io/spring-cloud-pipelines).
+* [Cockpit](https://cockpit-project.org) installation to simplify interaction with kubernetes.
+* Simple installation of [Artifactory](https://jfrog.com/artifactory) to support most artifact repository requirements.
 * One-liner installation of all development tools required for local development and deployment into minikube.
 
 The scripts provided are confirmed to work on **macOS** High Sierra Version 10.13.5.
 
-### Preparing for installations
+### Preparing For Installations
 
 Follow these steps to use any portion of Minikube Easy:
 
@@ -28,21 +43,11 @@ Change to minikube-easy/scripts directory.
 
 All install scripts have a corresponding uninstall script.
 
-### Install everything required for local development and deployments to minikube.
+### Local Development Installation
 
 The local-development-install.sh script installs minikube, hyperkit, kubectl, jenkins, cockpit and artifactory. If you choose to install everything using this script there is no need to execute the  installation scripts described below this instruction. However you have the option to install individual tools if you prefer as described below this instruction.
 
 `./local-development-install.sh`
-
-### Setting up your own spring cloud pipeline.
-
-If you have installed everything required for local development you can test it out using spring cloud pipelines. 
-
-Use the install-config-jenkins-pipeline-k8s-seed.sh script to create your spring cloud pipelines jenkins jobs seed. Replace project-name with your project name.
-
-`cd spring-cloud-pipeline`
-
- `./install-config-jenkins-pipeline-k8s-seed.sh project-name`
  
 
 ### Installing Minikube Instance Alone
@@ -88,7 +93,7 @@ The registry-install.sh installs a docker registry. It is most likely not necess
 
 Add insecure registry address to docker:
 
-<img src="docker-insecure-registry.png" width="400"/>
+<img src="images/docker-insecure-registry.png" width="400"/>
  
  
  ### Reusing the Docker daemon
@@ -100,6 +105,17 @@ Add insecure registry address to docker:
 Execute minidocker-install.sh to make the minidocker available from any shell location.
 
 `./minidocker-install.sh`
+
+
+### Setting up your own spring cloud pipeline.
+
+If you have installed everything required for local development you can test it out using spring cloud pipelines. 
+
+Use the install-config-jenkins-pipeline-k8s-seed.sh script to create your spring cloud pipelines jenkins jobs seed. Replace project-name with your project name.
+
+`cd spring-cloud-pipeline`
+
+ `./install-config-jenkins-pipeline-k8s-seed.sh project-name`
 
 
 
