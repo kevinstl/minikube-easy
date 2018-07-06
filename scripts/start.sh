@@ -41,6 +41,6 @@ fi
 #chown 777 /minikube
 #nohup minikube mount /minikube:/host-home &
 
-sudo ./hosts-edit.sh "minikube" `minikube ip` /etc/hosts
+sudo ./hosts-edit.sh "minikube-easy" `minikube ip` /etc/hosts
 
 nohup minikube mount ~:/host-home &

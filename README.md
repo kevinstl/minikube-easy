@@ -47,8 +47,11 @@ All install scripts have a corresponding uninstall script.
 
 The local-development-install.sh script installs minikube, hyperkit, kubectl, jenkins, cockpit and artifactory. If you choose to install everything using this script there is no need to execute the  installation scripts described below this instruction. However you have the option to install individual tools if you prefer as described below this instruction.
 
-`./local-development-install.sh`
+`./local-development-install.sh your-nexus-password location-of-credentials-xml`
+
+"your-nexus-password" is provided so that you may push artifacts to nexus
  
+ "location-of-credentials-xml" is the credentials.xml file with path that provides required credentials to jenkins. You can use this [templates/credentials.xml]([templates/credentials.xml]) for an example.
 
 ### Installing Minikube Instance Alone
 
@@ -70,6 +73,14 @@ Start minikube with the start.sh script.
 Stop minikube with the stop.sh script.
 
 `./stop.sh`
+
+### Uninstalling Minikube
+
+The uninstall.sh script will uninstall minikube and it's dependencies.
+
+Execute uninstall.sh - This uninstalls everything needed to run minikube on your machine. It uninstalls kubectl, hyperkit and minikube.
+
+`./iminstall.sh`
 
 
 ### Install Cockpit.
