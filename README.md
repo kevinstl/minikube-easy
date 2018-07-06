@@ -51,7 +51,7 @@ The local-development-install.sh script installs minikube, hyperkit, kubectl, je
 
 "your-nexus-password" is provided so that you may push artifacts to nexus
  
- "location-of-credentials-xml" is the credentials.xml file with path that provides required credentials to jenkins. You can use this [templates/credentials.xml]([templates/credentials.xml]) for an example.
+ "location-of-credentials-xml" is the credentials.xml file with path that provides required credentials to jenkins. You can use this [scripts/templates/credentials.xml]([scripts/templates/credentials.xml]) for an example.
 
 ### Installing Minikube Instance Alone
 
