@@ -1,9 +1,9 @@
 #!/bin/bash
 
-nexusPassword=$1
-credentialsXml=$2
+credentialsXml=$1
 
 ./install.sh
-./jenkins-install.sh $nexusPassword $credentialsXml
+./jenkins-install.sh $credentialsXml
+./artifactory-install.sh
 ./cockpit-install.sh
 
