@@ -14,6 +14,8 @@ startWithCockpit=$1
 #minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g --insecure-registry localhost:5000 --extra-config=apiserver.Authentication.PasswordFile.BasicAuthFile=/var/lib/localkube/config/static-users.csv
 #minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g --insecure-registry localhost:5000
 
+echo "starting minikube"
+
 if [ "$startWithCockpit" == "cockpit" ]
 then
     echo "Starting with cockpit."
@@ -37,10 +39,9 @@ fi
 
 #    --extra-config=apiserver.admission-control="PodPreset"
 
-#mkdir /minikube
-#chown 777 /minikube
-#nohup minikube mount /minikube:/host-home &
+echo "started minikube"
+
+./mount-host-home.sh
 
 sudo ./hosts-edit.sh "minikube-easy" `minikube ip` /etc/hosts
 
-nohup minikube mount ~:/host-home &

@@ -47,11 +47,39 @@ All install scripts have a corresponding uninstall script.
 
 The local-development-install.sh script installs minikube, hyperkit, kubectl, jenkins, cockpit and artifactory. If you choose to install everything using this script there is no need to execute the  installation scripts described below this instruction. However you have the option to install individual tools if you prefer as described below this instruction.
 
-`./local-development-install.sh your-nexus-password location-of-credentials-xml`
+`./local-development-install.sh ~/tmp/credentials.xml`
 
-"your-nexus-password" is provided so that you may push artifacts to nexus
+Once the installation has completed you should be able to navigate to the following:
+
+[Dashboard at http://minikube-easy:30000](http://minikube-easy:30000)
+
+[Cockpit at http://minikube-easy:30009](http://minikube-easy:30009) username: kube password: changeme
+
+[Jenkins at http://minikube-easy:30010](http://minikube-easy:30010)
+
+[Artifactory at http://minikube-easy:30011](http://minikube-easy:30011)
+
+
+### Running Example Spring Cloud Pipelines.
+
+If you have installed everything required for local development you can test it out using spring cloud pipelines. This example will create a Spring Cloud Pipeline in Jenkins that you will be able to execute.
+
+
+
+Use the install-config-jenkins-pipeline-k8s-seed.sh script to create your spring cloud pipelines jenkins jobs seed. Replace project-name with your project name.
+
+`cd spring-cloud-pipeline`
+
+ `./install-config-jenkins-pipeline-k8s-seed.sh project-name`
+
+
+### <a name="credentials-xml"></a>credentials.xml
+
+"~/tmp/credentials.xml" is a recommended location of the credentials.xml file with your credentials for github and dockerhub provided. You can use this [conf/credentials.xml](https://github.com/kevinstl/minikube-easy/blob/master/conf/credentials.xml) for an example. It is recommended that you DO NOT modify and use the example credentials.xml in this repo as you might accidentally commit that file to github with your personal credentials included. 
+
+In order for the spring cloud pipeline to run properly you will have to provide your own credentials in "your-git-username", "your-git-password", "your-dockerhub-username" and "your-dockerhub-password".
  
- "location-of-credentials-xml" is the credentials.xml file with path that provides required credentials to jenkins. You can use this [conf/credentials.xml](https://raw.githubusercontent.com/kevinstl/minikube-easy/blob/master/conf/credentials.xml) for an example.
+
 
 ### Installing Minikube Instance Alone
 
@@ -118,15 +146,7 @@ Execute minidocker-install.sh to make the minidocker available from any shell lo
 `./minidocker-install.sh`
 
 
-### Setting up your own spring cloud pipeline.
 
-If you have installed everything required for local development you can test it out using spring cloud pipelines. 
-
-Use the install-config-jenkins-pipeline-k8s-seed.sh script to create your spring cloud pipelines jenkins jobs seed. Replace project-name with your project name.
-
-`cd spring-cloud-pipeline`
-
- `./install-config-jenkins-pipeline-k8s-seed.sh project-name`
 
 
 
