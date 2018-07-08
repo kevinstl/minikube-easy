@@ -78,7 +78,7 @@ In order for the spring cloud pipeline to run properly you will have to provide 
 
 ### Running Example Spring Cloud Pipelines.
 
-If you have installed everything required for local development via the ocal-development-install.sh script you can test it out using spring cloud pipelines. This example will create a Spring Cloud Pipeline in Jenkins that you will be able to execute.
+If you have installed everything required for local development via the local-development-install.sh script you can test it out using spring cloud pipelines. This example will create a Spring Cloud Pipeline in Jenkins that you will be able to execute.
 
 Navigate to your [Artifactory](http://minikube-easy:30011) instance. Login with username: admin password: password. From top right drop down choose Quick Setup. Create Maven Repository.  The example spring cloud pipeline will deploy artifacts to this Maven repository in Artifactory. 
 
