@@ -2,7 +2,7 @@
 
 Minikube Easy is a collection of bash scripts and templates that simplify the installation of minikube and local development infrastructure. 
 
-[Minikube](https://github.com/kubernetes/minikube) is a great initiative for running [kubernetes](https://kubernetes.io/docs/home) on your local workstation for developing locally. While kubernetes and minikube are under constant development this project aims to ensure a stable development environment using minikube.
+[Minikube](https://github.com/kubernetes/minikube) is a great initiative for running [Kubernetes](https://kubernetes.io/docs/home) on your local workstation for developing locally. While kubernetes and minikube are under constant development this project aims to ensure a stable development environment using minikube.
 
 
 [<img src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" width="100px">](https://kubernetes.io/docs/home) 
@@ -48,18 +48,33 @@ All install scripts have a corresponding uninstall script.
 
 The local-development-install.sh script installs minikube, hyperkit, kubectl, jenkins, cockpit and artifactory. If you choose to install everything using this script there is no need to execute the  installation scripts described below this instruction. However you have the option to install individual tools if you prefer as described below this instruction.
 
+Add required credentials to [credentials.xml](#credentials-xml).
+
 `./local-development-install.sh ~/tmp/credentials.xml`
 
 Once the installation has completed you should be able to navigate to the following:
 
 [Dashboard at http://minikube-easy:30000](http://minikube-easy:30000)
 
+<img src="images/kubernetes-dashboard-overview.png" width="600"/>
+
 [Cockpit at http://minikube-easy:30009](http://minikube-easy:30009) username: kube password: changeme
+
+<img src="images/cockpit-topology.png" width="600"/>
 
 [Jenkins at http://minikube-easy:30010](http://minikube-easy:30010)
 
+<img src="images/jenkins-example-pipeline-jobs.png" width="600"/>
+
 [Artifactory at http://minikube-easy:30011](http://minikube-easy:30011)
 
+<img src="images/artifactory-overview.png" width="600"/>
+
+### <a name="credentials-xml"></a>credentials.xml
+
+"~/tmp/credentials.xml" is a recommended location of the credentials.xml file with your credentials for github and dockerhub provided. You can use [conf/credentials.xml](https://github.com/kevinstl/minikube-easy/blob/master/conf/credentials.xml) for an example. It is recommended that you DO NOT modify and use the example credentials.xml in this repo as you might accidentally commit that file to github with your personal credentials included. 
+
+In order for the spring cloud pipeline to run properly you will have to provide your own credentials in "your-git-username", "your-git-password", "your-dockerhub-username" and "your-dockerhub-password".
 
 ### Running Example Spring Cloud Pipelines.
 
@@ -75,14 +90,6 @@ Use the install-config-jenkins-pipeline-k8s-seed.sh script to create your spring
  `./install-config-jenkins-pipeline-k8s-seed.sh your-project-name`
  
  Execute the [jenkins-pipeline-k8s-seed](http://minikube-easy:30010/job/jenkins-pipeline-k8s-seed) job. After that job is complete execute the [minikube-easy-pipeline](http://minikube-easy:30010/view/minikube-easy-pipeline) job.
-
-
-### <a name="credentials-xml"></a>credentials.xml
-
-"~/tmp/credentials.xml" is a recommended location of the credentials.xml file with your credentials for github and dockerhub provided. You can use this [conf/credentials.xml](https://github.com/kevinstl/minikube-easy/blob/master/conf/credentials.xml) for an example. It is recommended that you DO NOT modify and use the example credentials.xml in this repo as you might accidentally commit that file to github with your personal credentials included. 
-
-In order for the spring cloud pipeline to run properly you will have to provide your own credentials in "your-git-username", "your-git-password", "your-dockerhub-username" and "your-dockerhub-password".
- 
 
 
 ### Installing Minikube Instance Alone
@@ -112,20 +119,31 @@ The uninstall.sh script will uninstall minikube and it's dependencies.
 
 Execute uninstall.sh - This uninstalls everything needed to run minikube on your machine. It uninstalls kubectl, hyperkit and minikube.
 
-`./iminstall.sh`
+`./ininstall.sh`
 
 
 ### Install Cockpit.
 
 [Cockpit](https://cockpit-project.org/) provides a rich graphical interface to kubernetes including a topology view of resources and direct shell access to containers running in kubernetes.
 
-Execute cockpit-install.sh - This will install cockpit. 
+Execute cockpit-install.sh - This will install Cockpit. 
 
 `./cockpit-install.sh`
 
-Once installed you will need to use the start-with-cockpit.sh script to start minikube.  The start-with-cockpit.sh script starts minikube with basic authentication support so that you may log into cockpit.
+Once installed you will need to use the start-with-cockpit.sh script to start minikube.  The start-with-cockpit.sh script starts minikube with basic authentication support so that you may log into Cockpit.
 
 `./start-with-cockpit.sh`
+
+
+### Install Jenkins
+
+Jenkins is an industry trusted continuous integration service.
+
+Execute jenkins-install.sh - This will install Jenkins. 
+
+`./jenkins-install.sh  ~/tmp/credentials.xml`
+
+Add required credentials to [credentials.xml](#credentials-xml).
 
 
 ### Install Docker Registry.
