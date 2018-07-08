@@ -23,9 +23,10 @@ Minikube Easy combines excellent technologies for you so that you can start deve
 
 * Installation of minikube, [hyperkit](https://github.com/moby/hyperkit), [kubectl](https://kubernetes.io/docs/reference/kubectl/overview) and development tools via one-liner shell commands.
 * Jenkins installation pre-configured with plugins required for builds and deployments using [Spring Cloud Pipelines](https://cloud.spring.io/spring-cloud-pipelines).
-* [Cockpit](https://cockpit-project.org) installation to simplify interaction with kubernetes.
+* [Cockpit](https://cockpit-project.org) installation to simplify interaction with kubernetes, including shell access to containers.
 * Simple installation of [Artifactory](https://jfrog.com/artifactory) to support most artifact repository requirements.
 * One-liner installation of all development tools required for local development and deployment into minikube.
+* Host volume mounted in minikube and various pods so that pod may access changes on host in real time.
 
 The scripts provided are confirmed to work on **macOS** High Sierra Version 10.13.5.
 
@@ -64,13 +65,16 @@ Once the installation has completed you should be able to navigate to the follow
 
 If you have installed everything required for local development you can test it out using spring cloud pipelines. This example will create a Spring Cloud Pipeline in Jenkins that you will be able to execute.
 
+Navigate to your [Artifactory](http://minikube-easy:30011) instance. Login with username: admin password: password. From top right drop down choose Quick Setup. Create Maven Repository.  The example spring cloud pipeline will deploy artifacts to this Maven repository in Artifactory. 
 
 
-Use the install-config-jenkins-pipeline-k8s-seed.sh script to create your spring cloud pipelines jenkins jobs seed. Replace project-name with your project name.
+Use the install-config-jenkins-pipeline-k8s-seed.sh script to create your spring cloud pipelines jenkins jobs seed. Replace your-project-name with your project name.
 
 `cd spring-cloud-pipeline`
 
- `./install-config-jenkins-pipeline-k8s-seed.sh project-name`
+ `./install-config-jenkins-pipeline-k8s-seed.sh your-project-name`
+ 
+ Execute the [jenkins-pipeline-k8s-seed](http://minikube-easy:30010/job/jenkins-pipeline-k8s-seed) job. After that job is complete execute the [minikube-easy-pipeline](http://minikube-easy:30010/view/minikube-easy-pipeline) job.
 
 
 ### <a name="credentials-xml"></a>credentials.xml
