@@ -157,7 +157,7 @@ Add insecure registry address to docker:
 <img src="images/docker-insecure-registry.png" width="400"/>
  
  
- ### Reusing the Docker daemon
+ ### Reusing the Minikube Docker Daemon
  
  You may [reuse the minikube docker daemon](https://github.com/kubernetes/minikube/blob/master/docs/reusing_the_docker_daemon.md) from your workstation shell. The benefit to doing this is that you can execute a docker build and the image you build is immediately available to your minikube instance rather than having to deploy to and pull from a docker registry.
  
