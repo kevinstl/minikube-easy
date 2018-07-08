@@ -163,7 +163,7 @@ Add insecure registry address to docker:
  
  Additionally minikube is resource intensive so you can reduce load on your workstation by not having to run a separate daemon instance to run docker commands.
  
-Execute minidocker-install.sh to make the minidocker available from any shell location.
+Execute minidocker-install.sh to make the minidocker command available from any shell location.
 
 `./minidocker-install.sh`
 
