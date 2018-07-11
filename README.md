@@ -8,7 +8,7 @@ Minikube Easy is a collection of bash scripts and templates that simplify the in
 [<img src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" width="100px">](https://kubernetes.io/docs/home) 
 [<img src="https://raw.githubusercontent.com/kubernetes/minikube/master/logo/logo.png" width="100px">](https://github.com/kubernetes/minikube) 
 [<img src="https://wiki.jenkins.io/download/attachments/2916393/logo.png" width="100px">](https://jenkins.io) 
-<!--[<img src="images/cockpit.png" width="100px">](https://cockpit-project.org)--> 
+<!-- [<img src="images/cockpit.png" width="100px">](https://cockpit-project.org) --> 
 [<img src="images/icon-spring-cloud.svg" width="100px">](https://cloud.spring.io/spring-cloud-pipelines) 
 [<img src="images/moby.png" width="100px">](https://www.docker.com) 
 [<img src="images/artifactory.png" width="100px">](https://jfrog.com/artifactory) 
