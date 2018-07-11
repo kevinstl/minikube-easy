@@ -8,7 +8,9 @@ Minikube Easy is a collection of bash scripts and templates that simplify the in
 [<img src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" width="100px">](https://kubernetes.io/docs/home) 
 [<img src="https://raw.githubusercontent.com/kubernetes/minikube/master/logo/logo.png" width="100px">](https://github.com/kubernetes/minikube) 
 [<img src="https://wiki.jenkins.io/download/attachments/2916393/logo.png" width="100px">](https://jenkins.io) 
-[<img src="images/cockpit.png" width="100px">](https://cockpit-project.org) 
+<!--
+[<img src="images/cockpit.png" width="100px">](https://cockpit-project.org)
+--> 
 [<img src="images/icon-spring-cloud.svg" width="100px">](https://cloud.spring.io/spring-cloud-pipelines) 
 [<img src="images/moby.png" width="100px">](https://www.docker.com) 
 [<img src="images/artifactory.png" width="100px">](https://jfrog.com/artifactory) 
@@ -23,7 +25,9 @@ Minikube Easy combines excellent technologies for you so that you can start deve
 
 * Installation of minikube, [hyperkit](https://github.com/moby/hyperkit), [kubectl](https://kubernetes.io/docs/reference/kubectl/overview) and development tools via one-liner shell commands.
 * Jenkins installation pre-configured with plugins required for builds and deployments using [Spring Cloud Pipelines](https://cloud.spring.io/spring-cloud-pipelines).
+<!--
 * [Cockpit](https://cockpit-project.org) installation to simplify interaction with kubernetes, including shell access to containers.
+-->
 * Simple installation of [Artifactory](https://jfrog.com/artifactory) to support most artifact repository requirements.
 * One-liner installation of all development tools required for local development and deployment into minikube.
 * Host volume mounted in minikube and various pods so that pod may access changes on host in real time.
@@ -46,7 +50,7 @@ All install scripts have a corresponding uninstall script.
 
 ### Local Development Installation
 
-The local-development-install.sh script installs minikube, hyperkit, kubectl, jenkins, cockpit and artifactory. If you choose to install everything using this script there is no need to execute the  installation scripts described below this instruction. However you have the option to install individual tools if you prefer as described below this instruction.
+The local-development-install.sh script installs minikube, hyperkit, kubectl, jenkins and artifactory. If you choose to install everything using this script there is no need to execute the  installation scripts described below this instruction. However you have the option to install individual tools if you prefer as described below this instruction.
 
 Add required credentials to [credentials.xml](#credentials-xml).
 
@@ -58,9 +62,11 @@ Once the installation has completed you should be able to navigate to the follow
 
 <img src="images/kubernetes-dashboard-overview.png" width="600"/>
 
-//[Cockpit at http://minikube-easy:30009](http://minikube-easy:30009) username: kube password: changeme
-//
-//<img src="images/cockpit-topology.png" width="600"/>
+<!--
+[Cockpit at http://minikube-easy:30009](http://minikube-easy:30009) username: kube password: changeme
+
+<img src="images/cockpit-topology.png" width="600"/>
+-->
 
 [Jenkins at http://minikube-easy:30010](http://minikube-easy:30010)
 
