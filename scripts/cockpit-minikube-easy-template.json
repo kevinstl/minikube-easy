@@ -25,7 +25,7 @@
           "spec":{
             "containers":[{
               "name": "kubernetes-cockpit",
-              "image": "cockpit/kubernetes:latest",
+              "image": "kevinstl/cockpt-minikube-easy:0.1.0",
               "ports":[{
                 "containerPort":9090,
                 "protocol":"TCP"
@@ -37,14 +37,38 @@
                 },
                 {
                   "name": "KUBERNETES_SERVICE_HOST",
-                  "value": "192.168.64.134"
+                  "value": "X_KUBERNETES_SERVICE_HOST_X"
                 },
                 {
                   "name": "KUBERNETES_SERVICE_PORT",
                   "value": "8443"
                 }
+              ],
+              "volumeMounts": [
+                {
+                  "mountPath": "/root/.kube",
+                  "name": "kube"
+                },
+                {
+                  "mountPath": "/Users/kevin/.minikube",
+                  "name": "minikube"
+                }
               ]
-            }]
+            }],
+            "volumes": [
+              {
+                "name": "kube",
+                "hostPath": {
+                  "path": "/host-home/.kube"
+                }
+              },
+              {
+                "name": "minikube",
+                "hostPath": {
+                  "path": "/host-home/.minikube"
+                }
+              }
+            ]
           }
         }
       }

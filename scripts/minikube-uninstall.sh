@@ -1,10 +1,15 @@
 #!/bin/bash
 
+./stop.sh
+
 minikube delete
 rm /usr/local/bin/minikube
 rm -rf ~/.minikube
 
-killall -9 minikube
+
+
+
+#killall -9 minikube
 
 #brew cask uninstall minikube
 
