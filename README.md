@@ -58,9 +58,9 @@ Once the installation has completed you should be able to navigate to the follow
 
 <img src="images/kubernetes-dashboard-overview.png" width="600"/>
 
-[Cockpit at http://minikube-easy:30009](http://minikube-easy:30009) username: kube password: changeme
-
-<img src="images/cockpit-topology.png" width="600"/>
+//[Cockpit at http://minikube-easy:30009](http://minikube-easy:30009) username: kube password: changeme
+//
+//<img src="images/cockpit-topology.png" width="600"/>
 
 [Jenkins at http://minikube-easy:30010](http://minikube-easy:30010)
 
@@ -122,7 +122,7 @@ Execute uninstall.sh - This uninstalls everything needed to run minikube on your
 `./ininstall.sh`
 
 
-### Install Cockpit.
+### Install Cockpit. (Cockpit appears not to be compatible with minikube v025.2 and above. Support for cockpit will resume when cockpit is compatible with newer versions of minikube.)
 
 [Cockpit](https://cockpit-project.org/) provides a rich graphical interface to kubernetes including a topology view of resources and direct shell access to containers running in kubernetes.
 
