@@ -3,6 +3,8 @@
 
 ./initialize.sh
 
+kubectl create clusterrolebinding test-cluster-admin-binding --clusterrole=cluster-admin --user=kube
+
 minikube ssh -- sudo mkdir -p /var/lib/localkube/certs/config
 minikube ssh -- 'sudo bash -c "echo \"changeme,kube,1\" > /var/lib/localkube/certs/config/static-users.csv"'
 
