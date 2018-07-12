@@ -1,9 +1,8 @@
 #!/bin/bash
 
-minikube delete
-
 ./stop.sh
 
+minikube delete
 rm /usr/local/bin/minikube
 rm -rf ~/.minikube
 
