@@ -3,4 +3,5 @@
 .zip
 nohup.out
 
-*fixed.xml
+**/*fixed.xml
+**/*fixed
