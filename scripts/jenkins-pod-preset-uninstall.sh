@@ -8,3 +8,4 @@
 kubectl --namespace continuous-integration delete -f ./templates/jenkins-pod-preset-master.yml
 kubectl --namespace continuous-integration delete -f ./templates/jenkins-pod-preset-slave.yml
 
+./templates/jenkins-pod-preset-master.yml
