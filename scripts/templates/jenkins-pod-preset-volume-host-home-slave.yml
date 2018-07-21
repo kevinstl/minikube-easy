@@ -1,0 +1,16 @@
+apiVersion: settings.k8s.io/v1alpha1
+kind: PodPreset
+metadata:
+  name: jenkins-pod-preset-volume-host-home-slave
+spec:
+  selector:
+    matchExpressions:
+      - {key: jenkins, operator: In, values: [slave]}
+  volumeMounts:
+    - name: host-home
+      mountPath: /host-home
+  volumes:
+    - name: host-home
+      hostPath:
+        # directory location on host
+        path: /host-home

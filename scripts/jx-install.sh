@@ -2,6 +2,4 @@
 
 ./initialize.sh
 
-
-brew tap jenkins-x/jx
-brew install jx
+jx install --provider=kubernetes --on-premise
