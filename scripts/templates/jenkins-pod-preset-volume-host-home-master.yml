@@ -6,6 +6,9 @@ spec:
   selector:
     matchExpressions:
       - {key: app, operator: In, values: [jenkins]}
+  env:
+    - name: KUBE_ENV
+      value: "local"
   volumeMounts:
     - name: host-home
       mountPath: /host-home
