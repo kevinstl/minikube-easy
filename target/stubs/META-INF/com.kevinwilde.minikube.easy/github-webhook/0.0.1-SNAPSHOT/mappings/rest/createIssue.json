@@ -1,0 +1,363 @@
+{
+  "id" : "a3223354-ddac-435a-b011-4548c7c5d159",
+  "request" : {
+    "url" : "/",
+    "method" : "POST",
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['login'] == 'elerion')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['updated_at'] == '2016-04-13T16:34:23Z')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['comments'] == 14)]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['forks_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/forks')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['clone_url'] == 'https://github.com/spring-cloud/spring-cloud-netflix.git')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['gravatar_id'] == '')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['private'] == false)]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['url'] == 'https://api.github.com/users/smithapitla')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['labels_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/issues/559/labels{/name}')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'][?(@.['body'] == '@dsyer \\r\\nList<ServiceInstance> list = client.getInstances(service) returns empty list even though I see the services as running in eureka. I tried using EurekaClient, DiscoveryClient and EurekaDiscoveryClient. But no luck there :( any idea what could be wrong. ')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['watchers_count'] == 333)]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['received_events_url'] == 'https://api.github.com/users/smithapitla/received_events')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['type'] == 'Organization')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['tags_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/tags')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['following_url'] == 'https://api.github.com/users/smithapitla/following{/other_user}')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['url'] == 'https://api.github.com/users/elerion')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['html_url'] == 'https://github.com/smithapitla')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['statuses_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/statuses/{sha}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['languages_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/languages')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['downloads_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/downloads')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['number'] == 559)]"
+    }, {
+      "matchesJsonPath" : "$.['comment'][?(@.['issue_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/issues/559')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['contents_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/contents/{+path}')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['url'] == 'https://api.github.com/users/smithapitla')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['commits_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/commits{/sha}')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['labels'][*][?(@.['color'] == 'cc317c')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['merges_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/merges')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['site_admin'] == false)]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['default_branch'] == 'master')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['received_events_url'] == 'https://api.github.com/users/spring-cloud/received_events')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['notifications_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/notifications{?since,all,participating}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['starred_url'] == 'https://api.github.com/users/spring-cloud/starred{/owner}{/repo}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['id'] == 7815877)]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['homepage'] == 'http://cloud.spring.io/spring-cloud-netflix/')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'][?(@.['id'] == 209662068)]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['repos_url'] == 'https://api.github.com/users/spring-cloud/repos')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['description'] == 'Integration with Netflix OSS components')]"
+    }, {
+      "matchesJsonPath" : "$.['organization'][?(@.['description'] == 'Tools for building common patterns in distributed systems with Spring')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['id'] == 108688072)]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['pushed_at'] == '2016-04-13T04:00:13Z')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['assignees_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/assignees{/user}')]"
+    }, {
+      "matchesJsonPath" : "$.['organization'][?(@.['repos_url'] == 'https://api.github.com/orgs/spring-cloud/repos')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['gists_url'] == 'https://api.github.com/users/spring-cloud/gists{/gist_id}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['releases_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/releases{/id}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['language'] == 'Java')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['html_url'] == 'https://github.com/elerion')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['avatar_url'] == 'https://avatars.githubusercontent.com/u/3036820?v=3')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['state'] == 'closed')]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['followers_url'] == 'https://api.github.com/users/smithapitla/followers')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['git_commits_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/git/commits{/sha}')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['repos_url'] == 'https://api.github.com/users/smithapitla/repos')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['open_issues_count'] == 136)]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['forks'] == 209)]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['starred_url'] == 'https://api.github.com/users/elerion/starred{/owner}{/repo}')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['site_admin'] == false)]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['avatar_url'] == 'https://avatars.githubusercontent.com/u/3036820?v=3')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['subscription_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/subscription')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['avatar_url'] == 'https://avatars.githubusercontent.com/u/7815877?v=3')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['labels_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/labels{/name}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['ssh_url'] == 'git@github.com:spring-cloud/spring-cloud-netflix.git')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['site_admin'] == false)]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['html_url'] == 'https://github.com/spring-cloud/spring-cloud-netflix/issues/559')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['contributors_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/contributors')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['mirror_url'] == null)]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['id'] == 21741891)]"
+    }, {
+      "matchesJsonPath" : "$.['organization'][?(@.['hooks_url'] == 'https://api.github.com/orgs/spring-cloud/hooks')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['following_url'] == 'https://api.github.com/users/spring-cloud/following{/other_user}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['issue_comment_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/issues/comments{/number}')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['subscriptions_url'] == 'https://api.github.com/users/smithapitla/subscriptions')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['action'] == 'created')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['milestones_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/milestones{/number}')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['following_url'] == 'https://api.github.com/users/elerion/following{/other_user}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['subscriptions_url'] == 'https://api.github.com/users/spring-cloud/subscriptions')]"
+    }, {
+      "matchesJsonPath" : "$.['organization'][?(@.['public_members_url'] == 'https://api.github.com/orgs/spring-cloud/public_members{/member}')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['repos_url'] == 'https://api.github.com/users/elerion/repos')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['blobs_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/git/blobs{/sha}')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['gravatar_id'] == '')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['watchers'] == 333)]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['html_url'] == 'https://github.com/spring-cloud/spring-cloud-netflix')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['deployments_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/deployments')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['open_issues'] == 136)]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['received_events_url'] == 'https://api.github.com/users/elerion/received_events')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['title'] == 'DiscoveryClient content seems null')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['has_downloads'] == true)]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['gravatar_id'] == '')]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['site_admin'] == false)]"
+    }, {
+      "matchesJsonPath" : "$.['comment'][?(@.['created_at'] == '2016-04-13T21:46:21Z')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['git_refs_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/git/refs{/sha}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['git_url'] == 'git://github.com/spring-cloud/spring-cloud-netflix.git')]"
+    }, {
+      "matchesJsonPath" : "$.['organization'][?(@.['id'] == 7815877)]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['url'] == 'https://api.github.com/users/spring-cloud')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['stargazers_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/stargazers')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['git_tags_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/git/tags{/sha}')]"
+    }, {
+      "matchesJsonPath" : "$.['organization'][?(@.['issues_url'] == 'https://api.github.com/orgs/spring-cloud/issues')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['forks_count'] == 209)]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['updated_at'] == '2016-04-13T21:46:21Z')]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['type'] == 'User')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['type'] == 'User')]"
+    }, {
+      "matchesJsonPath" : "$.['organization'][?(@.['events_url'] == 'https://api.github.com/orgs/spring-cloud/events')]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['login'] == 'smithapitla')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['organizations_url'] == 'https://api.github.com/users/smithapitla/orgs')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['followers_url'] == 'https://api.github.com/users/spring-cloud/followers')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['teams_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/teams')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['issue_events_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/issues/events{/number}')]"
+    }, {
+      "matchesJsonPath" : "$.['organization'][?(@.['avatar_url'] == 'https://avatars.githubusercontent.com/u/7815877?v=3')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['hooks_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/hooks')]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['received_events_url'] == 'https://api.github.com/users/smithapitla/received_events')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['assignee'] == null)]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['body'] == 'Hi,\\r\\n\\r\\nI use SNAPSHOT version add when i try to autowired the discoveryClient the content is null, my service is registered to eurekaServer.\\r\\n\\r\\nI haven\\'t this problem with the milestones (M1) version\\r\\n\\r\\n```java\\r\\n@Component\\r\\npublic class EurekaClients {\\r\\n\\r\\n\\t@Autowired\\r\\n\\t@Lazy\\r\\n\\tprivate DiscoveryClient discoveryClient;\\r\\n\\r\\n\\t@Autowired\\r\\n\\tprivate SwaggerConfig swaggerConfig;\\r\\n\\r\\n\\tpublic HashMap<String, String> getAllClients() {\\r\\n\\t\\tHashMap<String, String> urlClients = new HashMap<String, String>();\\r\\n\\t\\tdiscoveryClient.getApplications().getRegisteredApplications().forEach(a -> {\\r\\n\\t\\t\\ta.getInstances().forEach(i -> {\\r\\n\\t\\t\\t\\turlClients.put(i.getAppName(),\\r\\n\\t\\t\\t\\t\\t\\tswaggerConfig.getPath() + i.getHomePageUrl().toString() + swaggerConfig.getPattern());\\r\\n\\t\\t\\t});\\r\\n\\t\\t});\\r\\n\\t\\treturn urlClients;\\r\\n\\t}\\r\\n\\r\\n}\\r\\n```\\r\\n\\r\\nI have this exception : \\r\\n\\r\\n```\\r\\norg.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.netflix.discovery.DiscoveryClient] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true), @org.springframework.context.annotation.Lazy(value=true)}\\r\\n\\tat org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1326) ~[spring-beans-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1072) ~[spring-beans-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.context.annotation.ContextAnnotationAutowireCandidateResolver$1.getTarget(ContextAnnotationAutowireCandidateResolver.java:82) ~[spring-context-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.getTarget(CglibAopProxy.java:685) ~[spring-aop-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:636) ~[spring-aop-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat com.netflix.discovery.DiscoveryClient$$EnhancerBySpringCGLIB$$68978133.getApplications(<generated>) ~[spring-core-4.2.1.RELEASE.jar:1.2.5]\\r\\n\\tat com.wl.protys.tools.swagger.EurekaClients.getAllClients(EurekaClients.java:28) ~[classes/:na]\\r\\n\\tat com.wl.protys.tools.swagger.IndexController.index(IndexController.java:16) ~[classes/:na]\\r\\n\\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_11]\\r\\n\\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_11]\\r\\n\\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_11]\\r\\n\\tat java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0_11]\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221) ~[spring-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137) ~[spring-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:111) ~[spring-webmvc-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:806) ~[spring-webmvc-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:729) ~[spring-webmvc-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959) ~[spring-webmvc-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration$ApplicationContextHeaderFilter.doFilterInternal(EndpointWebMvcAutoConfiguration.java:249) ~[spring-boot-actuator-1.3.0.M5.jar:1.3.0.M5]\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:102) ~[spring-boot-actuator-1.3.0.M5.jar:1.3.0.M5]\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85) ~[spring-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:87) ~[spring-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77) ~[spring-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:69) ~[spring-boot-actuator-1.3.0.M5.jar:1.3.0.M5]\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219) ~[tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106) [tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) [tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142) [tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1526) [tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1482) [tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_11]\\r\\n\\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_11]\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.26.jar:8.0.26]\\r\\n\\tat java.lang.Thread.run(Thread.java:745) [na:1.8.0_11]\\r\\n```\\r\\n\\r\\nAnd this is the content of my discoveryClient variable\\r\\n![erreureureka](https://cloud.githubusercontent.com/assets/14874472/10140683/0eadc780-6609-11e5-990a-628cfa806e38.PNG)\\r\\n')]"
+    }, {
+      "matchesJsonPath" : "$.['organization'][?(@.['members_url'] == 'https://api.github.com/orgs/spring-cloud/members{/member}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['branches_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/branches{/branch}')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['organizations_url'] == 'https://api.github.com/users/elerion/orgs')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['followers_url'] == 'https://api.github.com/users/smithapitla/followers')]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['organizations_url'] == 'https://api.github.com/users/smithapitla/orgs')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['has_pages'] == true)]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['issues_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/issues{/number}')]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['repos_url'] == 'https://api.github.com/users/smithapitla/repos')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['events_url'] == 'https://api.github.com/users/smithapitla/events{/privacy}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['subscribers_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/subscribers')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['stargazers_count'] == 333)]"
+    }, {
+      "matchesJsonPath" : "$.['organization'][?(@.['login'] == 'spring-cloud')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['has_wiki'] == true)]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['collaborators_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/collaborators{/collaborator}')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['labels'][*][?(@.['url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/labels/question')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'][?(@.['updated_at'] == '2016-04-13T21:46:21Z')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['comments_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/issues/559/comments')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['login'] == 'spring-cloud')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['starred_url'] == 'https://api.github.com/users/smithapitla/starred{/owner}{/repo}')]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['starred_url'] == 'https://api.github.com/users/smithapitla/starred{/owner}{/repo}')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['followers_url'] == 'https://api.github.com/users/elerion/followers')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['login'] == 'smithapitla')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'][?(@.['url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/issues/comments/209662068')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['id'] == 3036820)]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['pulls_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/pulls{/number}')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['avatar_url'] == 'https://avatars.githubusercontent.com/u/14874472?v=3')]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['id'] == 3036820)]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['milestone'] == null)]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['subscriptions_url'] == 'https://api.github.com/users/elerion/subscriptions')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'][?(@.['html_url'] == 'https://github.com/spring-cloud/spring-cloud-netflix/issues/559#issuecomment-209662068')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['events_url'] == 'https://api.github.com/users/spring-cloud/events{/privacy}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['has_issues'] == true)]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['closed_at'] == '2015-09-30T10:32:10Z')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['id'] == 14874472)]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['gists_url'] == 'https://api.github.com/users/smithapitla/gists{/gist_id}')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['labels'][*][?(@.['name'] == 'question')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/issues/559')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['full_name'] == 'spring-cloud/spring-cloud-netflix')]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['subscriptions_url'] == 'https://api.github.com/users/smithapitla/subscriptions')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['gists_url'] == 'https://api.github.com/users/elerion/gists{/gist_id}')]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['events_url'] == 'https://api.github.com/users/smithapitla/events{/privacy}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['organizations_url'] == 'https://api.github.com/users/spring-cloud/orgs')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['type'] == 'User')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['svn_url'] == 'https://github.com/spring-cloud/spring-cloud-netflix')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['events_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/issues/559/events')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['name'] == 'spring-cloud-netflix')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['keys_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/keys{/key_id}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['trees_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/git/trees{/sha}')]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['html_url'] == 'https://github.com/smithapitla')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['events_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/events')]"
+    }, {
+      "matchesJsonPath" : "$.['organization'][?(@.['url'] == 'https://api.github.com/orgs/spring-cloud')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['created_at'] == '2014-07-11T15:46:12Z')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['fork'] == false)]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['created_at'] == '2015-09-28T15:51:07Z')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['html_url'] == 'https://github.com/spring-cloud')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'].['user'][?(@.['events_url'] == 'https://api.github.com/users/elerion/events{/privacy}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'].['owner'][?(@.['gravatar_id'] == '')]"
+    }, {
+      "matchesJsonPath" : "$.['sender'][?(@.['following_url'] == 'https://api.github.com/users/smithapitla/following{/other_user}')]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['locked'] == false)]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['compare_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/compare/{base}...{head}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['size'] == 6756)]"
+    }, {
+      "matchesJsonPath" : "$.['issue'][?(@.['repository_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix')]"
+    }, {
+      "matchesJsonPath" : "$.['comment'].['user'][?(@.['gists_url'] == 'https://api.github.com/users/smithapitla/gists{/gist_id}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['comments_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/comments{/number}')]"
+    }, {
+      "matchesJsonPath" : "$.['repository'][?(@.['archive_url'] == 'https://api.github.com/repos/spring-cloud/spring-cloud-netflix/{archive_format}{/ref}')]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "a3223354-ddac-435a-b011-4548c7c5d159"
+}

@@ -173,6 +173,13 @@ Execute minidocker-install.sh to make the minidocker command available from any 
 
 
 
+ ### Fix broken minikube
+ 
+ 1. Remove extraneous entries from /private/var/db/dhcpd_leases.
+ 2. Delete ~/.minikube/machines/minikube/hyperkit.pid.
+
+
+
 
 
 
