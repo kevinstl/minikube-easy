@@ -1,0 +1,21 @@
+FROM phusion/baseimage:0.10.1
+
+RUN add-apt-repository ppa:cockpit-project/cockpit
+RUN apt-get update
+RUN apt-get -y install cockpit cockpit-docker
+
+RUN systemctl start cockpit
+RUN systemctl enable cockpit
+
+ADD ./bin/* /usr/local/bin/
+WORKDIR /usr/local/bin
+RUN chmod a+x /usr/local/bin/*
+
+#RUN systemctl enable cockpit.socket
+
+CMD ["./run.sh","-d"]
+
+
+
+
+

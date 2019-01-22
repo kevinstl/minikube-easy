@@ -1,0 +1,28 @@
+apiVersion: settings.k8s.io/v1alpha1
+kind: PodPreset
+metadata:
+  name: jenkins-pod-preset-volume-host-home-slave
+spec:
+  selector:
+    matchExpressions:
+      - {key: jenkins, operator: In, values: [slave]}
+  env:
+    - name: KUBE_ENV
+      value: "local"
+#    - name: SETTINGS_XML
+#      value: "-s /host-home/.m2/settings.xml"
+#    - name: MAVEN_REPO
+#      value: "-Dmaven.repo.local=/host-home/.m2/repository"
+#    - name: NEXUS_PASSWORD
+#      valueFrom:
+#        secretKeyRef:
+#          name: jenkins-pod-preset-secrets
+#          key: nexus-password
+  volumeMounts:
+    - name: host-home
+      mountPath: /host-home
+  volumes:
+    - name: host-home
+      hostPath:
+        # directory location on host
+        path: /host-home

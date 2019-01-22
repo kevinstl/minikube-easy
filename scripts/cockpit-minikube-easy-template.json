@@ -1,0 +1,99 @@
+{
+  "kind":"List",
+  "apiVersion":"v1",
+  "items":[
+    {
+      "kind":"ReplicationController",
+      "apiVersion":"v1",
+      "metadata":{
+        "name":"kubernetes-cockpit",
+        "labels":{
+          "name":"kubernetes-cockpit"
+        }
+      },
+      "spec":{
+        "replicas":1,
+        "selector":{
+          "name":"kubernetes-cockpit"
+        },
+        "template":{
+          "metadata":{
+            "labels":{
+              "name":"kubernetes-cockpit"
+            }
+          },
+          "spec":{
+            "containers":[{
+              "name": "kubernetes-cockpit",
+              "image": "kevinstl/cockpt-minikube-easy:0.1.0",
+              "ports":[{
+                "containerPort":9090,
+                "protocol":"TCP"
+              }],
+              "env":[
+                {
+                  "name": "KUBE_INSECURE",
+                  "value": "true"
+                },
+                {
+                  "name": "KUBERNETES_SERVICE_HOST",
+                  "value": "X_KUBERNETES_SERVICE_HOST_X"
+                },
+                {
+                  "name": "KUBERNETES_SERVICE_PORT",
+                  "value": "8443"
+                }
+              ],
+              "volumeMounts": [
+                {
+                  "mountPath": "/root/.kube",
+                  "name": "kube"
+                },
+                {
+                  "mountPath": "/Users/kevin/.minikube",
+                  "name": "minikube"
+                }
+              ]
+            }],
+            "volumes": [
+              {
+                "name": "kube",
+                "hostPath": {
+                  "path": "/host-home/.kube"
+                }
+              },
+              {
+                "name": "minikube",
+                "hostPath": {
+                  "path": "/host-home/.minikube"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "kind":"Service",
+      "apiVersion":"v1",
+      "metadata":{
+        "name":"kubernetes-cockpit",
+        "labels":{
+          "name":"kubernetes-cockpit"
+        }
+      },
+      "spec":{
+        "type": "NodePort",
+        "ports": [{
+          "protocol": "TCP",
+          "port": 443,
+          "targetPort": 9090,
+          "nodePort": 30009
+        }],
+        "selector":{
+          "name":"kubernetes-cockpit"
+        }
+      }
+    }
+  ]
+}

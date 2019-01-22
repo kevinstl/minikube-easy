@@ -1,0 +1,16 @@
+{
+  "id" : "5e710fd9-33f6-4af6-aac0-69c3c093f01c",
+  "request" : {
+    "url" : "/",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"data\":[{\"username\":\"dsyer\",\"repository\":\"spring-cloud-samples\",\"type\":\"hook\",\"action\":\"updated\"},{\"username\":\"smithapitla\",\"repository\":\"spring-cloud/spring-cloud-netflix\",\"type\":\"issue\",\"action\":\"created\"}]}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "5e710fd9-33f6-4af6-aac0-69c3c093f01c"
+}
