@@ -118,6 +118,7 @@ is a CI/CD solution for applications on Kubernetes. If you have ever built a CI/
 Execute jenkins-x-install.sh - This will install Jenkins X. 
 
 `./jx-exe-install.sh`
+
 `./jx-install.sh`
 
 
