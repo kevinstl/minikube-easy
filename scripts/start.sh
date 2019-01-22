@@ -19,21 +19,24 @@ startWithCockpit=$1
 echo "starting minikube"
 
 
-
+basicAuth=""
 
 
 if [ "$startWithCockpit" == "cockpit" ]
 then
     echo "Starting with cockpit."
 
+    basicAuth="--extra-config=apiserver.basic-auth-file=/var/lib/localkube/certs/config/static-users.csv"
+
 #    minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g \
 #    --extra-config=apiserver.basic-auth-file=/var/lib/localkube/certs/config/static-users.csv \
 #    --extra-config=apiserver.admission-control="NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodPreset"
 
-minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g \
-    --extra-config=apiserver.basic-auth-file=/var/lib/localkube/certs/config/static-users.csv \
-    --extra-config=apiserver.admission-control="NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodPreset" \
-    --extra-config=apiserver.runtime-config=api/all=true
+#minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g \
+#minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=3 --memory=6144 --disk-size=40g \
+#    --extra-config=apiserver.basic-auth-file=/var/lib/localkube/certs/config/static-users.csv \
+#    --extra-config=apiserver.admission-control="NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodPreset" \
+#    --extra-config=apiserver.runtime-config=api/all=true
 
 else
     echo "Starting without cockpit."
@@ -41,11 +44,19 @@ else
 #    minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g \
 #    --extra-config=apiserver.admission-control="NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodPreset"
 
-    minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g \
+#    minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=4 --memory=12288 --disk-size=40g \
+#minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=1 --memory=6144 --disk-size=40g \
+#    --extra-config=apiserver.admission-control="NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodPreset" \
+#    --extra-config=apiserver.runtime-config=api/all=true
+
+fi
+
+
+minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=3 --memory=6144 --disk-size=40g \
+    ${basicAuth} \
     --extra-config=apiserver.admission-control="NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodPreset" \
     --extra-config=apiserver.runtime-config=api/all=true
 
-fi
 
 #    --extra-config=apiserver.Authorization.Mode=RBAC \
 #    --extra-config=apiserver.admission-control="PodPreset"

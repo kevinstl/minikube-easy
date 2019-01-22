@@ -7,6 +7,7 @@ Minikube Easy is a collection of bash scripts and templates that simplify the in
 
 [<img src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" width="100px">](https://kubernetes.io/docs/home) 
 [<img src="https://raw.githubusercontent.com/kubernetes/minikube/master/logo/logo.png" width="100px">](https://github.com/kubernetes/minikube) 
+[<img src="https://jenkins.io/images/logos/jenkins-x/jenkins-x-256.png" width="100px">](https://jenkins-x.io) 
 [<img src="https://wiki.jenkins.io/download/attachments/2916393/logo.png" width="100px">](https://jenkins.io) 
 [<img src="images/icon-spring-cloud.svg" width="100px">](https://cloud.spring.io/spring-cloud-pipelines) 
 [<img src="images/moby.png" width="100px">](https://www.docker.com) 
@@ -16,7 +17,7 @@ Minikube Easy is a collection of bash scripts and templates that simplify the in
 
 Minikube Easy combines excellent technologies for you so that you can start developing as quickly as possible so that you don't have to spend your time researching how to wire things together, it has been done for you.
 
-[<img src="https://jenkins.io/images/logos/jenkins-x/jenkins-x-256.png" width="100px">Jenkins X Coming Soon...](https://jenkins-x.io) 
+
 
 
 ### Key Features
@@ -32,7 +33,7 @@ Minikube Easy combines excellent technologies for you so that you can start deve
 
 The scripts provided are confirmed to work on **macOS** High Sierra Version 10.13.5.
 
-### Preparing For Installations
+### <a name="preparing-for-installations">Preparing For Installations
 
 Follow these steps to use any portion of Minikube Easy:
 
@@ -46,13 +47,13 @@ Change to minikube-easy/scripts directory.
 
 All install scripts have a corresponding uninstall script.
 
-### Local Development Installation
+### <a name="local-development-installation"></a>Local Development Installation
 
-The local-development-install.sh script installs minikube, hyperkit, kubectl, jenkins and artifactory. If you choose to install everything using this script there is no need to execute the  installation scripts described below this instruction. However you have the option to install individual tools if you prefer as described below this instruction.
+The local-development-install.sh script installs Minikube, hyperkit, kubectl and Cockpit. If you choose to install everything using this script there is no need to execute the  installation scripts described below this instruction. However you have the option to install individual tools if you prefer as described below this instruction.
 
-Add required credentials to [credentials.xml](#credentials-xml).
+`./local-development-install.sh`
 
-`./local-development-install.sh ~/tmp/credentials.xml`
+Now [install Jenkins X](#install-jenkins-x)
 
 Once the installation has completed you should be able to navigate to the following:
 
@@ -60,40 +61,11 @@ Once the installation has completed you should be able to navigate to the follow
 
 <img src="images/kubernetes-dashboard-overview.png" width="600"/>
 
-<!--
 [Cockpit at http://minikube-easy:30009](http://minikube-easy:30009) username: kube password: changeme
 
 <img src="images/cockpit-topology.png" width="600"/>
--->
-
-[Jenkins at http://minikube-easy:30010](http://minikube-easy:30010)
-
-<img src="images/jenkins-example-pipeline-jobs.png" width="600"/>
-
-[Artifactory at http://minikube-easy:30011](http://minikube-easy:30011)
-
-<img src="images/artifactory-overview.png" width="600"/>
-
-### <a name="credentials-xml"></a>credentials.xml
-
-"~/tmp/credentials.xml" is a recommended location of the credentials.xml file with your credentials for github and dockerhub provided. You can use [conf/credentials.xml](https://github.com/kevinstl/minikube-easy/blob/master/conf/credentials.xml) for an example. It is recommended that you DO NOT modify and use the example credentials.xml in this repo as you might accidentally commit that file to github with your personal credentials included. 
-
-In order for the spring cloud pipeline to run properly you will have to provide your own credentials in "your-git-username", "your-git-password", "your-dockerhub-username" and "your-dockerhub-password".
-
-### Running Example Spring Cloud Pipelines.
-
-If you have installed everything required for local development via the local-development-install.sh script you can test it out using spring cloud pipelines. This example will create a Spring Cloud Pipeline in Jenkins that you will be able to execute.
-
-Navigate to your [Artifactory](http://minikube-easy:30011) instance. Login with username: admin password: password. From top right drop down choose Quick Setup. Create Maven Repository.  The example spring cloud pipeline will deploy artifacts to this Maven repository in Artifactory. 
 
 
-Use the install-config-jenkins-pipeline-k8s-seed.sh script to create your spring cloud pipelines jenkins jobs seed. Replace your-project-name with your project name.
-
-`cd spring-cloud-pipeline`
-
- `./install-config-jenkins-pipeline-k8s-seed.sh your-project-name`
- 
- In Jenkins execute the [jenkins-pipeline-k8s-seed](http://minikube-easy:30010/job/jenkins-pipeline-k8s-seed) job. After that job is complete execute the [minikube-easy-pipeline](http://minikube-easy:30010/view/minikube-easy-pipeline) job.
 
 
 ### Installing Minikube Instance Alone
@@ -139,15 +111,34 @@ Once installed you will need to use the start-with-cockpit.sh script to start mi
 `./start-with-cockpit.sh`
 
 
-### Install Jenkins
+### <a name="install-jenkins-x"></a>Install Jenkins X
 
-Jenkins is an industry trusted continuous integration service.
+is a CI/CD solution for applications on Kubernetes. If you have ever built a CI/CD pipeline for kubernetes manually, you will truely appreciate what Jenkins X does for you.
+
+Execute jenkins-x-install.sh - This will install Jenkins X. 
+
+`./jx-exe-install.sh`
+`./jx-install.sh`
+
+
+### <a name="install-stand-alone-jenkins"></a>Install Stand Alone Jenkins
+
+If you prefer to run a stand alone Jenkins instance rather than Jenkins X then follow these instructions.
 
 Execute jenkins-install.sh - This will install Jenkins. 
 
 `./jenkins-install.sh  ~/tmp/credentials.xml`
 
 Add required credentials to [credentials.xml](#credentials-xml).
+
+
+### <a name="install-artifactory"></a>Install Artifactory
+
+Artifactory is a universal repository manager. In particular it is capable of serving Docker Registry and Nexus. 
+
+Execute artifactory-install.sh - This will install Artifactory. 
+
+`./artifactory-install.sh `
 
 
 ### Install Docker Registry.
@@ -159,9 +150,10 @@ The registry-install.sh installs a docker registry. It is most likely not necess
 Add insecure registry address to docker:
 
 <img src="images/docker-insecure-registry.png" width="400"/>
- 
- 
- ### Reusing the Minikube Docker Daemon
+
+
+
+### Reusing the Minikube Docker Daemon
  
  You may [reuse the minikube docker daemon](https://github.com/kubernetes/minikube/blob/master/docs/reusing_the_docker_daemon.md) from your workstation shell. The benefit to doing this is that you can execute a docker build and the image you build is immediately available to your minikube instance rather than having to deploy to and pull from a docker registry.
  
@@ -172,15 +164,32 @@ Execute minidocker-install.sh to make the minidocker command available from any 
 `./minidocker-install.sh`
 
 
+### Running Example Spring Cloud Pipelines.
+
+Install [Stand Alone Jenkins](#install-stand-alone-jenkins) and [Artifactory](#instal-artifactory) so that you can use spring cloud pipelines. This example will create a Spring Cloud Pipeline in Jenkins that you will be able to execute.
+
+Navigate to your [Artifactory](http://minikube-easy:30011) instance. Login with username: admin password: password. From top right drop down choose Quick Setup. Create Maven Repository.  The example spring cloud pipeline will deploy artifacts to this Maven repository in Artifactory. 
+
+
+Use the install-config-jenkins-pipeline-k8s-seed.sh script to create your spring cloud pipelines jenkins jobs seed. Replace your-project-name with your project name.
+
+`cd spring-cloud-pipeline`
+
+ `./install-config-jenkins-pipeline-k8s-seed.sh your-project-name`
+ 
+ In Jenkins execute the [jenkins-pipeline-k8s-seed](http://minikube-easy:30010/job/jenkins-pipeline-k8s-seed) job. After that job is complete execute the [minikube-easy-pipeline](http://minikube-easy:30010/view/minikube-easy-pipeline) job.
+
+
+### <a name="credentials-xml"></a>credentials.xml
+
+"~/tmp/credentials.xml" is a recommended location of the credentials.xml file with your credentials for github and dockerhub provided. You can use [conf/credentials.xml](https://github.com/kevinstl/minikube-easy/blob/master/conf/credentials.xml) for an example. It is recommended that you DO NOT modify and use the example credentials.xml in this repo as you might accidentally commit that file to github with your personal credentials included. 
+
+In order for the spring cloud pipeline to run properly you will have to provide your own credentials in "your-git-username", "your-git-password", "your-dockerhub-username" and "your-dockerhub-password".
+
 
  ### Fix broken minikube
  
  1. Remove extraneous entries from /private/var/db/dhcpd_leases.
- 2. Delete ~/.minikube/machines/minikube/hyperkit.pid.
-
-
-
-
-
-
-
+ 2. rm ~/.minikube/machines/minikube/hyperkit.pid
+ 3. remove failed pods: kubectl --namespace jx get pods --field-selector 'status.phase=Failed' -o name | xargs kubectl --namespace jx delete
+ 

@@ -9,5 +9,5 @@
 ./jenkins-pod-preset-volume-host-home-install.sh
 
 ./cockpit-install.sh
-
+#./jx-install.sh
 
