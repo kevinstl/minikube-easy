@@ -64,6 +64,7 @@ minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=3 --memory=61
 echo "started minikube"
 
 ./mount-host-home.sh
+./mount-network-drive.sh
 
 sudo ./hosts-edit.sh "minikube-easy" `minikube ip` /etc/hosts
 
