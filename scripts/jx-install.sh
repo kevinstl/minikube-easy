@@ -17,6 +17,10 @@ kubectl create clusterrolebinding jx-staging --clusterrole=cluster-admin --user=
 kubectl create clusterrolebinding jx-production --clusterrole=cluster-admin --user=admin --user=expose --group=system:serviceaccounts --serviceaccount=jx-production:expose --namespace=jx-productions
 
 
-jx install --provider=kubernetes --on-premise
-#jx install --provider=minikube --on-premise
+#jx install --provider=kubernetes --on-premise
+
+mkdir -p ~/.jx
+cp ./templates/myvalues.yaml ~/.jx/
+
+jx install --provider=minikube --on-premise
 #jx install --provider=minikube

@@ -52,7 +52,7 @@ else
 fi
 
 
-minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=3 --memory=6144 --disk-size=40g \
+minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=3 --memory=8192 --disk-size=250g \
     ${basicAuth} \
     --extra-config=apiserver.admission-control="NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodPreset" \
     --extra-config=apiserver.runtime-config=api/all=true

@@ -1,0 +1,50 @@
+jenkins:
+  Agent:
+    # Key Value selectors. Ex:
+    # jenkins-agent: v1
+    PodTemplates:
+      JX-base:
+        Name: jx-base-jhipster
+        Label: jenkins-jx-base-jhipster
+        volumes:
+        - type: Secret
+          secretName: jenkins-docker-cfg
+          mountPath: /home/jenkins/.docker
+        EnvVars:
+          JENKINS_URL: http://jenkins:8080
+          GIT_COMMITTER_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_NAME: jenkins-x-bot
+          GIT_COMMITTER_NAME: jenkins-x-bot
+          XDG_CONFIG_HOME: /home/jenkins
+          DOCKER_CONFIG: /home/jenkins/.docker/
+        ServiceAccount: jenkins
+        # Node labels and tolerations for pod assignment
+        # ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector
+        # ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+        # NodeSelector:
+        #   dedicated: jenkins-x-builder
+        # Tolerations:
+        # - effect: NoSchedule
+        #   key: dedicated
+        #   operator: Equal
+        #   value: jenkins-x-builder
+        Containers:
+          Jnlp:
+            Image: jenkinsci/jnlp-slave:3.26-1-alpine
+
+            RequestCpu: "100m"
+            RequestMemory: "128Mi"
+            Args: '${computer.jnlpmac} ${computer.name}'
+          JX-base:
+            Image: gcr.io/jenkinsxio/builder-jx:0.1.327
+            Privileged: true
+            RequestCpu: "200m"
+            RequestMemory: "256Mi"
+            LimitCpu: "400m"
+            LimitMemory: "2048Mi"
+            # You may want to change this to true while testing a new image
+            # AlwaysPullImage: true
+            Command: "/bin/sh -c"
+            Args: "cat"
+            Tty: true
