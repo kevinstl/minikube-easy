@@ -10,6 +10,14 @@ jenkins:
         - type: Secret
           secretName: jenkins-docker-cfg
           mountPath: /home/jenkins/.docker
+        - type: HostPath
+          hostPath: /root/.m2
+          mountPath: /root/.m2
+
+#        - type: PersistentVolumeClaim
+#          mountPath: /root/.m2
+#          claimName: jx-jhipster-pvc
+
         EnvVars:
           JENKINS_URL: http://jenkins:8080
           GIT_COMMITTER_EMAIL: jenkins-x@googlegroups.com
@@ -48,3 +56,6 @@ jenkins:
             Command: "/bin/sh -c"
             Args: "cat"
             Tty: true
+#            volumeMounts:
+#            - name: maven-pvc
+#              mountPath: "/root/.m2"
