@@ -1,11 +1,13 @@
 apiVersion: settings.k8s.io/v1alpha1
 kind: PodPreset
 metadata:
-  name: jenkins-pod-preset-volume-host-home-master
+  name: jenkins-pod-preset-volume-host-home-maven
 spec:
   selector:
     matchExpressions:
-      - {key: app, operator: In, values: [jenkins]}
+      - {"key" : "jenkins/jenkins-jx-base-jhipster", "operator" : "In" , "values" : ["true"]}
+#  selector:
+#    { "jenkins/jenkins-jx-base-jhipster" : "true" }
   env:
     - name: KUBE_ENV
       value: "local"
@@ -19,15 +21,10 @@ spec:
 #          name: jenkins-pod-preset-secrets
 #          key: nexus-password
   volumeMounts:
-    - name: host-home
-      mountPath: /host-home
     - name: jx-jhipster
       mountPath: /root/.m2
   volumes:
-    - name: host-home
-      hostPath:
-        # directory location on host
-        path: /host-home
     - name: jx-jhipster
       persistentVolumeClaim:
         claimName: jx-jhipster-pvc
+

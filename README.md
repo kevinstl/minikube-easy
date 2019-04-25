@@ -194,3 +194,7 @@ In order for the spring cloud pipeline to run properly you will have to provide 
  2. rm ~/.minikube/machines/minikube/hyperkit.pid
  3. remove failed pods: kubectl --namespace jx get pods --field-selector 'status.phase=Failed' -o name | xargs kubectl --namespace jx delete
  
+
+ ### Optimize JHipster
+ 
+ https://slack.engineering/keep-webpack-fast-a-field-guide-for-better-build-performance-f56a5995e8f1
