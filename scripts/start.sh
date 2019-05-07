@@ -52,10 +52,20 @@ else
 fi
 
 
-minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=3 --memory=8192 --disk-size=250g \
-    ${basicAuth} \
-    --extra-config=apiserver.admission-control="NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodPreset" \
-    --extra-config=apiserver.runtime-config=api/all=true
+#minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=3 --memory=8192 --disk-size=50g \
+#    ${basicAuth} \
+#    --extra-config=apiserver.admission-control="NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodPreset" \
+#    --extra-config=apiserver.runtime-config=api/all=true
+
+
+#minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=3 --memory=8192 --disk-size=50g \
+#--extra-config=apiserver.runtime-config=api/all=true \
+#--extra-config=apiserver.enable-admission-plugins=Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,NodeRestriction,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodPreset
+
+minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=3 --memory=8192 --disk-size=50g \
+--extra-config=apiserver.runtime-config=settings.k8s.io/v1alpha1=true \
+--extra-config=apiserver.enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,Priority,ResourceQuota,PodPreset
+
 
 
 #    --extra-config=apiserver.Authorization.Mode=RBAC \
@@ -64,7 +74,7 @@ minikube start --vm-driver=hyperkit --v=7 --alsologtostderr --cpus=3 --memory=81
 echo "started minikube"
 
 ./mount-host-home.sh
-./mount-network-drive.sh
+#./mount-network-drive.sh
 
 sudo ./hosts-edit.sh "minikube-easy" `minikube ip` /etc/hosts
 

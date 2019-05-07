@@ -14,9 +14,12 @@
 
 #curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.10.12/bin/darwin/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
 
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.11.3/bin/darwin/amd64/kubectl && chmod +x kubectl && sudo mv kubectl ~/installs/google-cloud-sdk/bin/
+#v1.11.3 worked with minikube v0.28.2 5-7-2019
+#curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.11.3/bin/darwin/amd64/kubectl && chmod +x kubectl && sudo mv kubectl ~/installs/google-cloud-sdk/bin/
 
-#curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.12.8/bin/darwin/amd64/kubectl && chmod +x kubectl && sudo mv kubectl ~/installs/google-cloud-sdk/bin/
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.11.10/bin/darwin/amd64/kubectl && chmod +x kubectl && sudo mv kubectl ~/installs/google-cloud-sdk/bin/
+
+
 
 
 # 4-30-2019
