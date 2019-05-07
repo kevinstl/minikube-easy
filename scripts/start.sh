@@ -68,3 +68,5 @@ echo "started minikube"
 
 sudo ./hosts-edit.sh "minikube-easy" `minikube ip` /etc/hosts
 
+minikube ssh -- sudo swapoff -a
+
